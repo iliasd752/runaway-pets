@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import "../../styles/footer.css";
+
+
 
 export const Footer = () => (
 	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
+		<div className="d-flex justify-content-around">
+			<p className="text-light">Profile</p>
+			<p className="text-light">Pets</p>
+			<p className="text-light">Notifications</p>
+
+		</div>
 	</footer>
 );
