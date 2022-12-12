@@ -12,8 +12,17 @@ label {
 }
 
 .homelogo {
-    width: 320px;
+    width: 300px;
     align-self: center;
+}
+
+.registerbadge {
+    width: 200px;
+    align-self: center;
+}
+
+.petpicture {
+width: 350px;
 }
 
 .boldlink {

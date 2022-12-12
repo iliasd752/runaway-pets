@@ -9,13 +9,13 @@ export const Home = () => {
 	return (
 		<div className="mt-5 container d-flex">
 			<div className="col col-6">
-			<img className="homelogo" src={homelogo}></img>
+			<img className="homelogo mb-5" src={homelogo}></img>
 			</div>
 
 			
 
 			<div className="col col-6 d-flex align-items-center">
-				<div className="form d-flex flex-column ">
+				<div className="form ml-5 d-flex flex-column ">
 					<label for="email">E-mail</label>
 					
 					<input type="email" name="email" placeholder="Enter your registered e-mail" className="inputfield"></input>
