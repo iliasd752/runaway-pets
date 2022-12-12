@@ -7,7 +7,6 @@ from sqlalchemy import create_engine
 
 db = SQLAlchemy()
 
-
 class User(db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
@@ -26,6 +25,12 @@ class User(db.Model):
             "email": self.email,
             # do not serialize the password, its a security breach
         }
+    def __init__(self, name, last_name, email, password, phone):
+        self.name = name
+        self.last_name = last_name
+        self.email = email
+        self.password = password
+        self.phone = phone
 
 class Finder(db.Model):
     __tablename__ = 'finder'
