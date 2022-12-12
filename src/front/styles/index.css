@@ -11,6 +11,27 @@ label {
     color: white;
 }
 
+h3 {
+    font-weight: 100;
+}
+
+
+.petcard {
+    width: 800px;
+    background-color: #7565A8;
+    border-radius: 90px;
+
+}
+
+.petpiccard {
+    width: 120px;
+    margin-left: 5px;
+    margin-right: 160px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  
+
+}
 .homelogo {
     width: 300px;
     align-self: center;
@@ -21,8 +42,22 @@ label {
     align-self: center;
 }
 
+.petpic {
+    width: 200px;
+}
+
 .petpicture {
 width: 350px;
+}
+
+.drop {
+    background-color: #FFA510;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 350px;
+    color: white;
+    padding-left: 12px;
+
 }
 
 .boldlink {
@@ -67,5 +102,5 @@ width: 350px;
 
 ::placeholder {
     color: white;
-    opacity: 1; /* Firefox */
+    opacity: 0.4; 
   }

@@ -1,6 +1,6 @@
 import React from "react";
 import registerbadge from "../../img/register-pet-badge.png";
-import Dropdown from 'react-bootstrap/Dropdown';
+import Form from 'react-bootstrap/Form';
 
 export const RegisterPet = () => {
 	// const { store, actions } = useContext(Context);
@@ -20,17 +20,12 @@ export const RegisterPet = () => {
 			<input type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
             </div>
 
-            <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Dropdown Button
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+            <Form.Select aria-label="Default select example" className="drop">
+      <option>Choose your pet species</option>
+      <option value="1">Dog</option>
+      <option value="2">Cat</option>
+      <option value="3">Lizard</option>
+    </Form.Select>
 
             <div className="petpicture d-flex justify-content-around align-items-center mt-3">
             <p className="align-self-left w-50">Upload a picture:</p>
