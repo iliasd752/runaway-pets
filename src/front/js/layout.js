@@ -14,6 +14,7 @@ import { PetProfile } from "./pages/PetProfile";
 import { FinderInfo } from "./pages/FinderInfo";
 import { Notification } from "./pages/Notification";
 import { PetCard } from "./component/PetCard";
+
 import { RegisterUser } from "./pages/RegisterUser";
 
 //create your first component
@@ -26,7 +27,7 @@ const Layout = () => {
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                    <Navbar />
+                    <NewNav />
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
