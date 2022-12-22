@@ -31,7 +31,7 @@ export const RegisterPet = () => {
                 //   }
         }
 
-        axios.post('https://3001-iliasd752-runawaypets-eb9ghg6ue0p.ws-eu79.gitpod.io/api/register_pet', opt)
+        axios.post('https://3001-iliasd752-runawaypets-eb9ghg6ue0p.ws-eu80.gitpod.io/api/register_pet', opt)
           .then(function (response) {
             console.log(response);
           })

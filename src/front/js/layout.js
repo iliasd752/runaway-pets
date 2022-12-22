@@ -14,6 +14,7 @@ import { PetProfile } from "./pages/PetProfile";
 import { FinderInfo } from "./pages/FinderInfo";
 import { Notification } from "./pages/Notification";
 import { PetCard } from "./component/PetCard";
+import { RegisterUser } from "./pages/RegisterUser";
 
 //create your first component
 const Layout = () => {
@@ -33,6 +34,7 @@ const Layout = () => {
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
+                    <RegisterUser />
                     <RegisterPet />
                     <PetProfile />
                     <FinderInfo />
