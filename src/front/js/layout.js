@@ -9,6 +9,12 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { RegisterPet } from "./pages/RegisterPet";
+import { PetProfile } from "./pages/PetProfile";
+import { FinderInfo } from "./pages/FinderInfo";
+import { Notification } from "./pages/Notification";
+import { PetCard } from "./component/PetCard";
+import { NewNav } from "./component/NewNav";
 
 //create your first component
 const Layout = () => {
@@ -20,7 +26,7 @@ const Layout = () => {
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                    <Navbar />
+                    <NewNav />
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
@@ -28,6 +34,13 @@ const Layout = () => {
                         <Route element={<h1>Not found!</h1>} />
                     </Routes>
                     <Footer />
+                    <RegisterPet />
+                    <PetProfile />
+                    <FinderInfo />
+                    <Notification />
+                    <PetCard />
+                    <PetCard />
+                    <PetCard />
                 </ScrollToTop>
             </BrowserRouter>
         </div>

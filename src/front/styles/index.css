@@ -1,3 +1,118 @@
 /* 
     General Styles used on every website (Don't Repeat Yourself)
 */
+
+
+body {
+    background-color: #FFA510;
+    color: white;
+}
+label {
+    color: white;
+}
+
+nav {
+    background-color: #7565A8;
+    color: white;
+    
+}
+
+.navbrand {
+    font-family: zilla;
+    font-weight: 700;
+    color: white;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+
+.petcard {
+    width: 800px;
+    background-color: #7565A8;
+    border-radius: 90px;
+
+}
+
+.petpiccard {
+    width: 120px;
+    margin-left: 5px;
+    margin-right: 160px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  
+
+}
+.homelogo {
+    width: 300px;
+    align-self: center;
+}
+
+.registerbadge {
+    width: 200px;
+    align-self: center;
+}
+
+.petpic {
+    width: 200px;
+}
+
+.petpicture {
+width: 350px;
+}
+
+.drop {
+    background-color: #FFA510;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 350px;
+    color: white;
+    padding-left: 12px;
+
+}
+
+.boldlink {
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+
+
+.footer {
+    background-color: #7565A8;
+}
+
+.inputfield {
+    background-color: #FFA510;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 350px;
+    color: white;
+    padding-left: 12px;
+
+}
+
+.purplebutton {
+    text-decoration: none;
+    color: white;
+    background-color: #7565A8;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 40px;
+    transition-duration: 200ms;
+
+}
+
+.purplebutton:hover {
+    transform: scale(103%);
+    color: #7565A8;
+    background-color: white;
+}
+
+::placeholder {
+    color: white;
+    opacity: 0.4; 
+  }
