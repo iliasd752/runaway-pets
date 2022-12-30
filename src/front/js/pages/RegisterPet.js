@@ -70,13 +70,21 @@ export const RegisterPet = () => {
 			<input value={important} onChange={(e) => {setImportant(e.target.value)}}  type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
             </div>
 
-            {/* TEST IMAGE UPLOAD */}
+               {/* TEST SPECIES */}
 
+             {/* <div className="petinfo d-flex flex-column mb-4">
+			<label for="petinfo" className="" >SPECIES</label>
+			<input value={species} onChange={(e) => {setSpecies(e.target.value)}}  type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
+            </div> */}
             <div className="petinfo d-flex flex-column mb-4">
-			<label for="petinfo" className="" >PICTURE</label>
-			<input value={image} onChange={(e) => {setImage(e.target.value)}}  type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
+            <label for="petselect" className="petlabel" >Pet species</label>
+            <Form.Select onChange={() => {setSpecies(e.target.value)}}  aria-label="Default select example" className="drop" name="petselect">
+                 <option value="1">Dog</option>
+                 <option value="2">Cat</option>
+                 <option value="3">Lizard</option>
+            </Form.Select>
             </div>
-
+            
              {/* TEST USER ID */}
 
              <div className="petinfo d-flex flex-column mb-4">
@@ -91,20 +99,14 @@ export const RegisterPet = () => {
 			<input value={qrCode} onChange={(e) => {setQrCode(e.target.value)}}  type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
             </div>
 
-             {/* TEST SPECIES */}
+          
 
-             <div className="petinfo d-flex flex-column mb-4">
-			<label for="petinfo" className="" >SPECIES</label>
-			<input value={species} onChange={(e) => {setSpecies(e.target.value)}}  type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
-            </div>
+    {/* TEST IMAGE UPLOAD */}
 
-
-            {/* <Form.Select onChange={() => {setSpecies(e.target.value)}}  aria-label="Default select example" className="drop">
-      <option>Choose your pet species</option>
-      <option value="1">Dog</option>
-      <option value="2">Cat</option>
-      <option value="3">Lizard</option>
-    </Form.Select> */}
+    <div className="petinfo d-flex flex-column mb-4">
+			<label  for="petpicture" className="" >PICTURE</label>
+			<input  value={image} onChange={(e) => {setImage(e.target.value)}}  type="file" name="petpicture" placeholder="Don't feed him French fries" ></input>
+    </div>
 
             {/* <div className="petpicture d-flex justify-content-around align-items-center mt-3">
             <p className="align-self-left w-50">Upload a picture:</p>
