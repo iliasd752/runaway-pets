@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 
 export const RegisterUser = () => {
-	// const { store, actions } = useContext(Context);
+	
 
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -17,36 +17,28 @@ export const RegisterUser = () => {
     const handleCLick = (e) => {
         e.preventDefault();
         const opt = {
-            method: "POST",
-            // headers: {
-            //     Access-Control-Allow-Origin "https://3001-iliasd752-runawaypets-eb9ghg6ue0p.ws-eu80.gitpod.io/api/register"
-            // }
-            body: {
+            
                 "name": name,
                 "last_name": lastName,
                 "email": email,
                 "password": password,
-                "phone_number": phoneNumber,
-                  }
+                "phone": phoneNumber,
+                  
         }
 
-        // axios.post('https://3001-iliasd752-runawaypets-eb9ghg6ue0p.ws-eu80.gitpod.io/api/register', {
-        //     "name": "John",
-        //         "last_name": "Paul",
-        //         "email": "john@gmail.com",
-        //         "password": "john",
-        //         "phone_number": 555,
-        // })
-        //   .then(function (response) {
-        //     console.log(response);
-        //   })
-        //   .catch(function (error) {
-        //     console.log(error);
-        //   });
-        fetch('https://3001-iliasd752-runawaypets-eb9ghg6ue0p.ws-eu79.gitpod.io/api/register_pet', opt.body)
-        .then((response) => console.log(response))
-        .then((data) => console.log(data))
-        .catch(err => {console.log(err)});
+        axios.post('https://3001-iliasd752-runawaypets-0cstea2nvk9.ws-eu80.gitpod.io/api/register', opt)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      
+      
+        // fetch('https://3001-iliasd752-runawaypets-eb9ghg6ue0p.ws-eu79.gitpod.io/api/register_pet', opt.body)
+        // .then((response) => console.log(response))
+        // .then((data) => console.log(data))
+        // .catch(err => {console.log(err)});
 
         console.log(opt)
 

@@ -14,6 +14,7 @@ import { PetProfile } from "./pages/PetProfile";
 import { FinderInfo } from "./pages/FinderInfo";
 import { Notification } from "./pages/Notification";
 import { PetCard } from "./component/PetCard";
+import { NewNav } from "./component/NewNav"
 
 import { RegisterUser } from "./pages/RegisterUser";
 
@@ -27,7 +28,7 @@ const Layout = () => {
         <div>
             <BrowserRouter basename={basename}>
                 <ScrollToTop>
-                    {/* <NewNav /> */}
+                    <NewNav />
                     <Routes>
                         <Route element={<Home />} path="/" />
                         <Route element={<Demo />} path="/demo" />
