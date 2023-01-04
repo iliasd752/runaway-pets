@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import homelogo from "../../img/homelogo.png";
 import "../../styles/home.css";
+import { NewNav } from "../component/NewNav";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
@@ -11,9 +12,6 @@ export const Home = () => {
 			<div className="col col-6">
 			<img className="homelogo mb-5" src={homelogo}></img>
 			</div>
-
-			
-
 			<div className="col col-6 d-flex align-items-center">
 				<div className="form ml-5 d-flex flex-column ">
 					<label for="email">E-mail</label>
