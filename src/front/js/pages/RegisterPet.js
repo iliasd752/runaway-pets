@@ -41,7 +41,7 @@ export const RegisterPet = () => {
                 //   }
         }
 
-        axios.post('https://3001-iliasd752-runawaypets-0cstea2nvk9.ws-eu80.gitpod.io/api/register_pet', opt)
+        axios.post(process.env.BACKEND_URL + "/api/register_pet", opt)
           .then(function (response) {
             console.log(response);
           })
@@ -75,6 +75,7 @@ export const RegisterPet = () => {
             <div className="petinfo d-flex flex-column mb-4">
             <label for="petselect" className="petlabel" >Pet species</label>
             <Form.Select type="text" onChange={(e) => {setSpecies(e.target.value)}}  aria-label="Default select example" className="drop" name="petselect">
+                <option>--</option>
                  <option value="Dog">Dog</option>
                  <option value="Cat">Cat</option>
                  <option value="Lizard">Lizard</option>
@@ -97,15 +98,15 @@ export const RegisterPet = () => {
 
           
 
-    {/* TEST IMAGE UPLOAD */}
+            {/* TEST IMAGE UPLOAD */}
 
-    <div className="petinfo d-flex flex-column mb-4">
-			<label  for="petpicture" className="" >PICTURE</label>
-			<input  value={image} onChange={ imageHandler }  type="file" name="petpicture" placeholder="Don't feed him French fries" ></input>
-    </div>
+            <div className="petinfo d-flex flex-column mb-4">
+		    	<label  for="petpicture" className="" >PICTURE</label>
+			    <input  value={image} onChange={ imageHandler }  type="file" name="petpicture" placeholder="Don't feed him French fries" ></input>
+            </div>
 
          
-             <button onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</button>
+            <button onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</button>
 
             <a onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</a>
 

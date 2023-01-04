@@ -26,7 +26,7 @@ export const RegisterUser = () => {
                   
         }
 
-        axios.post('https://3001-iliasd752-runawaypets-0cstea2nvk9.ws-eu80.gitpod.io/api/register', opt)
+        axios.post(process.env.BACKEND_URL + "/api/register", opt)
         .then(function (response) {
           console.log(response);
         })
