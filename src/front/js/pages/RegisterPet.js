@@ -1,119 +1,192 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import registerbadge from "../../img/register-pet-badge.png";
-import Form from 'react-bootstrap/Form';
-import axios from 'axios';
+import Form from "react-bootstrap/Form";
+import axios from "axios";
 
 export const RegisterPet = () => {
+  const [name, setName] = useState("");
+  const [species, setSpecies] = useState("");
+  const [important, setImportant] = useState("");
+  const [image, setImage] = useState("");
+  const [userId, setUserId] = useState("");
+  const [qrCode, setQrCode] = useState("");
+  const [input, setInput] = useState("");
+  const [imageData, setimageData] = useState("");
 
-    const [name, setName] = useState("");
-    const [species, setSpecies] = useState("");
-    const [important, setImportant] = useState("");
-    const [image, setImage] = useState("");
-    const [userId, setUserId] = useState("");
-    const [qrCode, setQrCode] = useState("");
+  const handleCLick = (e) => {
+    e.preventDefault();
 
+   
 
+    const formData = new FormData();
+    formData.append("file", input);
+    formData.append("upload_preset", "g8kqzblj");
 
-
-    const imageHandler = (e) => {
-        e.preventDefault();
-        sessionStorage.setItem("image", e.target.files[0])
-
+    const postImage = async () => {
+      try {
+        const response = await axios.post(
+          "https://api.cloudinary.com/v1_1/dbw5oujiu/image/upload",
+          formData
+        );
+        console.log(response);
+        const testing = response.data.url;
         
 
-        // setImage(sessionStorage.getItem("image"))
+        if (response.status == 200) {
 
-
-    }
-
-    const test = sessionStorage.getItem("image")
-
-    const handleCLick = (e) => {
-        e.preventDefault();
-        const opt = {
+            const photoURL = response.data.url;
+            setimageData(photoURL);
+            console.log(imageData, "yhis is image data")
+            axios.post("https://3001-iliasd752-runawaypets-swqgly18v9g.ws-eu81.gitpod.io/api/register_pet", {
                 "name": name,
                 "species": species,
                 "important": important,
-                "image": test,
+                "image": photoURL,
                 "user_id": userId,
                 "qr_code": qrCode
-                //   }
-        }
+            }) .then (console.log(response, "Hello"))
+        
+        } 
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    postImage()
+         // .then(
+        // if (image !== null) {
+        //     axios.post("https://api.cloudinary.com/v1_1/dbw5oujiu/image/upload", {
+       
+        // }).then(console.log(response))
+        // }
+        
+    // ) 
+  };
 
-        axios.post(process.env.BACKEND_URL + "/api/register_pet", opt)
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+  return (
+    <div className="mt-5 container d-flex flex-column align-items-center">
+      <img className="registerbadge mb-5" src={registerbadge}></img>
 
-        console.log(opt)
+      <div className="petname d-flex flex-column mb-3">
+        <label for="petname">Pet name</label>
+        <input
+          value={name}
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+          type="text"
+          name="petname"
+          placeholder="Bingo"
+          className="inputfield align-self-left"
+        ></input>
+      </div>
 
-   
-    }
+      <div className="petinfo d-flex flex-column mb-4">
+        <label for="petinfo" className="">
+          Important information
+        </label>
+        <input
+          value={important}
+          onChange={(e) => {
+            setImportant(e.target.value);
+          }}
+          type="text"
+          name="petinfo"
+          placeholder="Don't feed him French fries"
+          className="inputfield"
+        ></input>
+      </div>
 
+      {/* TEST SPECIES */}
 
-	return (
-		<div className="mt-5 container d-flex flex-column align-items-center">
-			
-			<img className="registerbadge mb-5" src={registerbadge}></img>
+      <div className="petinfo d-flex flex-column mb-4">
+        <label for="petselect" className="petlabel">
+          Pet species
+        </label>
+        <Form.Select
+          type="text"
+          onChange={(e) => {
+            setSpecies(e.target.value);
+          }}
+          aria-label="Default select example"
+          className="drop"
+          name="petselect"
+        >
+          <option>--</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Lizard">Lizard</option>
+        </Form.Select>
+      </div>
 
-            <div className="petname d-flex flex-column mb-3">
-            <label for="petname">Pet name</label>
-			<input value={name} onChange={(e) => {setName(e.target.value)}}  type="text" name="petname" placeholder="Bingo" className="inputfield align-self-left"></input>
-            </div>
+      {/* TEST USER ID */}
 
-            <div className="petinfo d-flex flex-column mb-4">
-			<label for="petinfo" className="" >Important information</label>
-			<input value={important} onChange={(e) => {setImportant(e.target.value)}}  type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
-            </div>
+      <div className="petinfo d-flex flex-column mb-4">
+        <label for="petinfo" className="">
+          USER ID
+        </label>
+        <input
+          value={userId}
+          onChange={(e) => {
+            setUserId(e.target.value);
+          }}
+          type="text"
+          name="petinfo"
+          placeholder="Don't feed him French fries"
+          className="inputfield"
+        ></input>
+      </div>
 
-               {/* TEST SPECIES */}
+      {/* TEST QR CODE */}
 
-            <div className="petinfo d-flex flex-column mb-4">
-            <label for="petselect" className="petlabel" >Pet species</label>
-            <Form.Select type="text" onChange={(e) => {setSpecies(e.target.value)}}  aria-label="Default select example" className="drop" name="petselect">
-                <option>--</option>
-                 <option value="Dog">Dog</option>
-                 <option value="Cat">Cat</option>
-                 <option value="Lizard">Lizard</option>
-            </Form.Select>
-            </div>
-            
-             {/* TEST USER ID */}
+      <div className="petinfo d-flex flex-column mb-4">
+        <label for="petinfo" className="">
+          QR CODE
+        </label>
+        <input
+          value={qrCode}
+          onChange={(e) => {
+            setQrCode(e.target.value);
+          }}
+          type="text"
+          name="petinfo"
+          placeholder="Don't feed him French fries"
+          className="inputfield"
+        ></input>
+      </div>
 
-             <div className="petinfo d-flex flex-column mb-4">
-			<label for="petinfo" className="" >USER ID</label>
-			<input value={userId} onChange={(e) => {setUserId(e.target.value)}}  type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
-            </div>
+      {/* TEST IMAGE UPLOAD */}
 
-            {/* TEST QR CODE */}
+      <div className="petinfo d-flex flex-column mb-4">
+        <label for="petpicture" className="">
+          PICTURE
+        </label>
+        <input
+          value={image}
+          onChange={(e) => {
+            setInput(e.target.files[0]);
+          }}
+          type="file"
+          name="petpicture"
+        ></input>
+      </div>
 
-            <div className="petinfo d-flex flex-column mb-4">
-			<label for="petinfo" className="" >QR CODE</label>
-			<input value={qrCode} onChange={(e) => {setQrCode(e.target.value)}}  type="text" name="petinfo" placeholder="Don't feed him French fries" className="inputfield"></input>
-            </div>
+      <img src={imageData} alt="test" width="140" height="130"/>
 
-          
+     
 
-            {/* TEST IMAGE UPLOAD */}
+      <button
+        onClick={handleCLick}
+        className="purplebutton w-25 text-center mt-5"
+      >
+        Submit
+      </button>
 
-            <div className="petinfo d-flex flex-column mb-4">
-		    	<label  for="petpicture" className="" >PICTURE</label>
-			    <input  value={image} onChange={ imageHandler }  type="file" name="petpicture" placeholder="Don't feed him French fries" ></input>
-            </div>
+      <a onClick={handleCLick} className="purplebutton w-25 text-center mt-5">
+        Submit
+      </a>
 
-         
-            <button onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</button>
-
-            <a onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</a>
-
-            <a className="purplebutton w-25 text-center mt-2">Back to home</a>
-
-			
-		
-		</div>
-	);
+      <a className="purplebutton w-25 text-center mt-2">Back to home</a>
+    </div>
+  );
 };
