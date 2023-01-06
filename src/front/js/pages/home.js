@@ -13,7 +13,9 @@ export const Home = () => {
 			<img className="homelogo mb-5" src={homelogo}></img>
 			</div>
 			<div className="col col-6 d-flex align-items-center">
+				
 				<div className="form ml-5 d-flex flex-column ">
+				<h3 className="mb-5">Login to your account</h3>
 					<label for="email">E-mail</label>
 					
 					<input type="email" name="email" placeholder="Enter your registered e-mail" className="inputfield"></input>
@@ -22,7 +24,11 @@ export const Home = () => {
 					
 					<input type="password" name="password" placeholder="Enter your password" className="inputfield"></input>
 					<p><a className="boldlink" href="register-user">Sign up</a> if you don't have an account</p>
-					<a className="purplebutton ml-auto mt-1 mb-5 w-25 text-center">Log In</a>
+					<div className="d-flex align-items-center justify-content-between">		
+                    <a className="purplebutton mt-1 mb-5 w-25 text-center mr-5">Login</a>
+                    <a className="ml-3 mt-1 mb-5 w-30 text-center signup">Sign up</a>
+                    </div>
+ 
 				</div>
 			</div>
 			
