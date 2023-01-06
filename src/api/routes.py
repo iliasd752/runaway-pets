@@ -28,15 +28,25 @@ def handle_hello():
 def add_user():
 
     request_body = request.json
+    if (request_body["name"] == None):
+        return "The name is missing", 404
+    if (request_body["last_name"] == None):
+        return "The last name is missing", 404
+    if (request_body["email"] == None):
+        return "The email is missing", 404
+    if (request_body["password"] == None):
+        return "The password is missing", 404
+    if (request_body["phone"] == None):
+        return "The phone is missing", 404
+    
     user = User(request_body["name"], request_body["last_name"], request_body["email"], request_body["password"], request_body["phone"])
+    
     db.session.add(user)
     db.session.commit()
+
     
-    users = User.query.all()
-    test =  list(map(lambda x: x.serialize(), users))
-    response = jsonify(test)
     
-    return response
+    return jsonify({"user": user.serialize()}), 200
 
 @api.route('/register_pet', methods=['POST'])
 def add_pet():
@@ -56,11 +66,20 @@ def add_pet():
 def get_token():
     email = request.json.get("email", None)
     password = request.json.get("password", None)
-    if email != "test" or password != "test":
-        return jsonify({"msg": "Bad username or password"}), 401
+    if email == None:
+        return "The email is missing", 404
+    if password == None:
+        return "The last password is missing", 404
+    print(email)
+    print(password)
+    user = User.query.filter_by(email=email).first()
+    if (user == None):
+        return "user does not exist", 404
+    if user.password != password:
+        return "wrong password", 404
 
     access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token)
+    return jsonify(access_token=access_token), 200
 
 @api.route('/scan_pet', methods=['POST'])
 def scan_pet():
