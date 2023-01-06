@@ -1,7 +1,10 @@
+import axios from "axios";
 import React from "react";
 import petpic from "../../img/dogprofile.png";
 
 export const PetProfile = () => {
+
+  // axios.get(process.env.BACKEND_URL + "/api/register_pet", ) > FETCH THE DATABASE INFO FROM REGISTER PET
 
   return (
     <div className="mt-5 container d-flex justify-content-center">
