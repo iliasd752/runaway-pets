@@ -59,9 +59,9 @@ class Pet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
     species = db.Column(db.String(120), unique=False, nullable=False)
-    important = db.Column(db.String(120), unique=False, nullable=False)
+    important = db.Column(db.String(120), unique=False, nullable=True)
     qr_code = db.Column(db.String(80), unique=False, nullable=False)
-    image = db.Column(db.Boolean(), unique=False, nullable=False)
+    image = db.Column(db.Text, unique=False, nullable=True)
     user_id = db.Column(db.Integer, ForeignKey('user.id'))
     finder_id = db.Column(db.Integer, ForeignKey('finder.id'))
 
