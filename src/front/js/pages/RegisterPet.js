@@ -53,14 +53,7 @@ export const RegisterPet = () => {
       }
     };
     postImage()
-         // .then(
-        // if (image !== null) {
-        //     axios.post("https://api.cloudinary.com/v1_1/dbw5oujiu/image/upload", {
-       
-        // }).then(console.log(response))
-        // }
-        
-    // ) 
+    
   };
 
   return (

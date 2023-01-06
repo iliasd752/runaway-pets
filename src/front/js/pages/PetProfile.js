@@ -2,7 +2,6 @@ import React from "react";
 import petpic from "../../img/dogprofile.png";
 
 export const PetProfile = () => {
-  // const { store, actions } = useContext(Context);
 
   return (
     <div className="mt-5 container d-flex justify-content-center">

@@ -35,21 +35,13 @@ export const RegisterUser = () => {
         });
       
       
-        // fetch('https://3001-iliasd752-runawaypets-eb9ghg6ue0p.ws-eu79.gitpod.io/api/register_pet', opt.body)
-        // .then((response) => console.log(response))
-        // .then((data) => console.log(data))
-        // .catch(err => {console.log(err)});
 
         console.log(opt)
 
    
     }
 
-    // useEffect(() => {
-    //     fetch('https://3001-iliasd752-runawaypets-eb9ghg6ue0p.ws-eu79.gitpod.io/api/register_pet')
-    //     .then((response) => response.json())
-    //     .then((data) => console.log(data));
-    // }, []);
+  
 
 
 	return (
@@ -88,20 +80,6 @@ export const RegisterUser = () => {
 			<input value={phoneNumber} onChange={(e) => {setPhoneNumber(e.target.value)}}  type="text" name="petinfo" placeholder="Your phone number" className="inputfield"></input>
             </div>
 
-
-
-            {/* <Form.Select onChange={() => {setSpecies(e.target.value)}}  aria-label="Default select example" className="drop">
-      <option>Choose your pet species</option>
-      <option value="1">Dog</option>
-      <option value="2">Cat</option>
-      <option value="3">Lizard</option>
-    </Form.Select> */}
-
-            {/* <div className="petpicture d-flex justify-content-around align-items-center mt-3">
-            <p className="align-self-left w-50">Upload a picture:</p>
-            <a className="purplebutton w-50 text-center">Choose file</a>
-            </div>
-             */}
              <button onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</button>
 
             <a onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</a>
