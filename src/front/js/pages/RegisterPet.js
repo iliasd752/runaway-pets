@@ -38,7 +38,7 @@ export const RegisterPet = () => {
             const photoURL = response.data.url;
             setimageData(photoURL);
             console.log(imageData, "yhis is image data")
-            axios.post("https://3001-iliasd752-runawaypets-swqgly18v9g.ws-eu81.gitpod.io/api/register_pet", {
+            axios.post(process.env.BACKEND_URL + "/api/register_pet", {
                 "name": name,
                 "species": species,
                 "important": important,
@@ -53,14 +53,7 @@ export const RegisterPet = () => {
       }
     };
     postImage()
-         // .then(
-        // if (image !== null) {
-        //     axios.post("https://api.cloudinary.com/v1_1/dbw5oujiu/image/upload", {
-       
-        // }).then(console.log(response))
-        // }
-        
-    // ) 
+    
   };
 
   return (

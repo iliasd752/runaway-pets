@@ -1,5 +1,11 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter,
+  createBrowserRouter,
+  Route,
+  Routes,
+  RouterProvider,
+} from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./pages/home";
@@ -14,40 +20,45 @@ import { PetProfile } from "./pages/PetProfile";
 import { FinderInfo } from "./pages/FinderInfo";
 import { Notification } from "./pages/Notification";
 import { PetCard } from "./component/PetCard";
-import { NewNav } from "./component/NewNav"
+import { NewNav } from "./component/NewNav";
 
 import { RegisterUser } from "./pages/RegisterUser";
 
 //create your first component
 const Layout = () => {
-    //the basename is used when your project is published in a subdirectory and not in the root of the domain
-    // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-    const basename = process.env.BASENAME || "";
+  //the basename is used when your project is published in a subdirectory and not in the root of the domain
+  // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
+  const basename = process.env.BASENAME || "";
 
-    return (
-        <div>
-            <BrowserRouter basename={basename}>
-                <ScrollToTop>
-                    <NewNav />
-                    <Routes>
-                        <Route element={<Home />} path="/" />
-                        <Route element={<Demo />} path="/demo" />
-                        <Route element={<Single />} path="/single/:theid" />
-                        <Route element={<h1>Not found!</h1>} />
-                    </Routes>
-                    <Footer />
-                    <RegisterUser />
-                    <RegisterPet />
-                    <PetProfile />
-                    <FinderInfo />
-                    <Notification />
-                    <PetCard />
-                    <PetCard />
-                    <PetCard />
-                </ScrollToTop>
-            </BrowserRouter>
-        </div>
-    );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/register-pet",
+      element: <RegisterPet />,
+    },
+    {
+      path: "/register-user",
+      element: <RegisterUser />,
+    },
+    {
+      path: "/pet-profile",
+      element: <PetProfile />,
+    },
+    {
+      path: "/finder-info",
+      element: <FinderInfo />,
+    },
+  ]);
+
+  return (
+    <div>
+      <NewNav />
+      <RouterProvider router={router} />
+    </div>
+  );
 };
 
 export default injectContext(Layout);

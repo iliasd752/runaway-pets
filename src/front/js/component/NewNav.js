@@ -8,13 +8,13 @@ export const NewNav = () => {
   return (
     <Navbar variant="dark" expand="lg">
       <Container>
-        <Navbar.Brand className='navbrand' href="#home">Runaway Pets</Navbar.Brand>
+        <Navbar.Brand className='navbrand' href="/">Runaway Pets</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Profile</Nav.Link>
+            <Nav.Link href="pet-profile">Profile</Nav.Link>
             <Nav.Link href="#link">Pets</Nav.Link>
-            <Nav.Link href="#link">Notifications</Nav.Link>
+            <Nav.Link href="register-user">Register</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
