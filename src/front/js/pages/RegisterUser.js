@@ -3,6 +3,8 @@ import { useState } from "react";
 import registerbadge from "../../img/register-pet-badge.png";
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+
 
 export const RegisterUser = () => {
 	
@@ -12,6 +14,7 @@ export const RegisterUser = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
+    const navigate = useNavigate();
 
 
     const handleCLick = (e) => {
@@ -29,6 +32,7 @@ export const RegisterUser = () => {
         axios.post(process.env.BACKEND_URL + "/api/register", opt)
         .then(function (response) {
           console.log(response);
+          navigate("/")         
         })
         .catch(function (error) {
           console.log(error);
@@ -104,7 +108,6 @@ export const RegisterUser = () => {
              */}
              <button onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</button>
 
-            <a onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</a>
 
             <a className="purplebutton w-25 text-center mt-2">Back to home</a>
 
