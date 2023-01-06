@@ -21,8 +21,8 @@ export const Home = () => {
 					<label for="password" className="">Password</label>
 					
 					<input type="password" name="password" placeholder="Enter your password" className="inputfield"></input>
-					<p><a className="boldlink">Sign up</a> if you don't have an account</p>
-					<a className="purplebutton ml-auto mt-1 mb-5 w-25 text-center">Submit</a>
+					<p><a className="boldlink" href="register-user">Sign up</a> if you don't have an account</p>
+					<a className="purplebutton ml-auto mt-1 mb-5 w-25 text-center">Log In</a>
 				</div>
 			</div>
 			

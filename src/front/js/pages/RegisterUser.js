@@ -55,7 +55,7 @@ export const RegisterUser = () => {
 	return (
 		<div className="mt-5 container d-flex flex-column align-items-center">
 			
-			<img className="registerbadge mb-5" src={registerbadge}></img>
+			<h1>Fill in the form to create your account</h1>
 
             <div className="petname d-flex flex-column mb-3">
             <label for="username">Name</label>

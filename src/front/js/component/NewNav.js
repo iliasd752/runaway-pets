@@ -14,7 +14,7 @@ export const NewNav = () => {
           <Nav className="me-auto">
             <Nav.Link href="pet-profile">Profile</Nav.Link>
             <Nav.Link href="#link">Pets</Nav.Link>
-            <Nav.Link href="#link">Notifications</Nav.Link>
+            <Nav.Link href="register-user">Register</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
