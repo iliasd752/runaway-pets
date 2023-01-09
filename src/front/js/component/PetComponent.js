@@ -1,14 +1,9 @@
 import React from "react";
 import petpic from "../../img/dogprofile.png";
-import { PetComponent } from "./PetComponent";
 
-export const PetCard = () => {
+export const PetComponent = () => {
   return (
-    <div className="container d-flex flex-column mt-5 marginbottom align-items-center">
-
-      <div>
-        <h3 className="mb-5">Hello, John! Here are your best friends</h3>
-      </div>
+    <div className="container d-flex flex-column mt-5 align-items-center">
 
      
       <div className="d-flex justify-content-left petcard align-items-center mb-4 mr-4 ml-3">
@@ -22,13 +17,6 @@ export const PetCard = () => {
         </div>
       </div>
 
-      <PetComponent />
-      <PetComponent />
-      <PetComponent />
-
-      <div>
-        <a className="purplebutton" href="register-pet">Add a new pet</a>
-      </div>
     </div>
   );
 };

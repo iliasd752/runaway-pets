@@ -13,17 +13,17 @@ export const NewNav = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="pet-profile">Profile</Nav.Link>
-            <Nav.Link href="#link">Pets</Nav.Link>
+            <Nav.Link href="pet-card">Pets</Nav.Link>
             <Nav.Link href="register-user">Register</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
+              <NavDropdown.Item href="error400">Error 400</NavDropdown.Item>
+              <NavDropdown.Item href="error404">
+                Error404
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="pet-component">Pet Component</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="settings">
+                Settings
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

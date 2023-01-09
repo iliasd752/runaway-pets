@@ -6,23 +6,22 @@ import {
   Routes,
   RouterProvider,
 } from "react-router-dom";
-import ScrollToTop from "./component/scrollToTop";
+
 
 import { Home } from "./pages/home";
-import { Demo } from "./pages/demo";
-import { Single } from "./pages/single";
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+
 import { RegisterPet } from "./pages/RegisterPet";
 import { PetProfile } from "./pages/PetProfile";
 import { FinderInfo } from "./pages/FinderInfo";
-import { Notification } from "./pages/Notification";
 import { PetCard } from "./component/PetCard";
 import { NewNav } from "./component/NewNav";
-
+import { Settings } from "./pages/Settings";
+import { PetComponent } from "./component/PetComponent";
 import { RegisterUser } from "./pages/RegisterUser";
+import { Error404 } from "./pages/Error404";
+import { Error400 } from "./pages/Error400";
 
 //create your first component
 const Layout = () => {
@@ -50,6 +49,26 @@ const Layout = () => {
     {
       path: "/finder-info",
       element: <FinderInfo />,
+    },
+    {
+      path: "/pet-card",
+      element: <PetCard />,
+    },
+    {
+      path: "/settings",
+      element: <Settings />,
+    },
+    {
+      path: "pet-component",
+      element: <PetComponent />,
+    },
+    {
+      path: "/error404",
+      element: <Error404 />,
+    },
+    {
+      path: "error400",
+      element: <Error400 />,
     },
   ]);
 

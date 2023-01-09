@@ -1,13 +1,13 @@
 import React from "react";
-import petpic from "../../img/dogprofile.png";
+import dog1 from "../../img/dog1.png";
 
-export const Error400 = () => {
+export const Error404 = () => {
 
   return (
-    <div className="mt-5 container d-flex justify-content-center">
+    <div className="container d-flex justify-content-center align-items-center margintop">
 
       <div className="col col-6 d-flex flex-column align-items-center">
-        <img className="petpic" src={petpic}></img>
+        <img className="petpic" src={dog1}></img>
       </div>
 
       <div className="col col-6 d-flex flex-column align-items-left">
