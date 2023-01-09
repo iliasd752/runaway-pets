@@ -49,6 +49,7 @@ def add_user():
     return jsonify({"user": user.serialize()}), 200
 
 @api.route('/register_pet', methods=['POST'])
+@jwt_required()
 def add_pet():
 
     request_body = request.json
@@ -70,16 +71,16 @@ def get_token():
         return "The email is missing", 404
     if password == None:
         return "The last password is missing", 404
-    print(email)
-    print(password)
     user = User.query.filter_by(email=email).first()
     if (user == None):
         return "user does not exist", 404
     if user.password != password:
         return "wrong password", 404
-
+    userId = user.id
     access_token = create_access_token(identity=email)
-    return jsonify(access_token=access_token), 200
+    return jsonify(
+        {"user_id": userId,
+        "access_token": access_token}), 200
 
 @api.route('/scan_pet', methods=['POST'])
 def scan_pet():
@@ -109,6 +110,22 @@ def give_pet():
     response = jsonify(test)
     
     return response
+
+@api.route('/petlist', methods=['POST'])
+@jwt_required()
+def list_pets():
+
+    request_body = request.json
+    if request_body["user_id"] == None:
+        return "Please log in again", 404
+    request_userId = request_body["user_id"]
+
+
+    pet = Pet.query.filter_by(user_id=request_userId).all()
+    if pet == []:
+        return "You have no friends", 200
+ 
+    return jsonify({"pet": list(map(lambda x: x.serialize(), pet))}), 200
 
 @api.route('/delete', methods=['DELETE'])
 def delete_all():
