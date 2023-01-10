@@ -7,6 +7,18 @@ body {
     background-color: #FFA510;
     color: white;
 }
+
+hr {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    color: white;
+  }
+  
 label {
     color: white;
 }
@@ -29,16 +41,22 @@ h3 {
 
 
 .petcard {
-    width: 800px;
+    width: 300px;
     background-color: #7565A8;
-    border-radius: 90px;
+    border-radius: 10px;
 
 }
 
+.card_species {
+    
+    font-weight: 100;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 28px;
+
+}
 .petpiccard {
-    width: 120px;
-    margin-left: 5px;
-    margin-right: 160px;
+    width: 100px;   
     margin-top: 12px;
     margin-bottom: 12px;
   

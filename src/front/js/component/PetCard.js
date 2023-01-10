@@ -36,22 +36,12 @@ const opts = {
       <div>
         <h3 className="mb-5">Hello, John! Here are your best friends</h3>
       </div>
-
-     
-      <div className="d-flex justify-content-left petcard align-items-center mb-4 mr-4 ml-3">
-        <div className="col col-2 d-flex flex-column ">
-          <img className="petpiccard mr-5" src={petpic}></img>
-        </div>
-
-        <div className="col col-6 d-flex flex-column align-items-left ml-5">
-          <h2>Marley</h2>
-          <h3>Dog</h3>
-        </div>
-      </div>
-
+    <div className="d-flex">
       <PetComponent />
       <PetComponent />
       <PetComponent />
+      <PetComponent />
+     </div>
 
       <div>
         <a className="purplebutton" href="register-pet">Add a new pet</a>
