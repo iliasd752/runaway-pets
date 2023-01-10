@@ -38,7 +38,16 @@ export const RegisterPet = () => {
             const photoURL = response.data.url;
             setimageData(photoURL);
             console.log(imageData, "yhis is image data")
-            axios.post(process.env.BACKEND_URL + "/api/register_pet", {
+
+            const authaxios = axios.create({
+              baseURL: env.BACKEND_URL,
+              headers: {
+                
+               Authorization: `Bearer ${token}` 
+              }
+            })
+
+                authaxios.post("/api/register_pet", {
                 "name": name,
                 "species": species,
                 "important": important,
