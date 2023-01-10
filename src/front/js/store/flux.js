@@ -32,16 +32,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  password: password,
 					}),
 				  };
-				  console.log(email, password);
-				  fetch("https://3001-iliasd752-runawaypets-kwcv5dhefhj.ws-eu81.gitpod.io/api/token", opts)
+				  fetch(process.env.BACKEND_URL + "/api/token", opts)
 					.then((resp) => {
 					  if (resp.status === 200) return resp.json();
 					})
 					.then(data => {
-					  console.log("This came from the backend", data);
 					  sessionStorage.setItem("token", data.access_token)
 					  sessionStorage.setItem("user_id", data.user_id)
-					  if (onSuccess) {onSuccess()}
+					  if (onSuccess) {
+						onSuccess()}
 					})
 					.catch((error) => {
 					  console.error("There was an error", error);
