@@ -13,14 +13,15 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			petList: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-			registerPet: (name,species,important,photoURL,userId,qrCode,token)=>{
+			registerPet: (name,species,important,photoURL,userId,qrCode,token,{onSuccess, onFailure} = {})=>{
 				const opts = {
 					method: "POST",
 					headers: {
@@ -42,10 +43,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => {
 					  console.log(data)
-					  
+					  if (onSuccess) {
+						onSuccess()}
 					})
 					.catch((error) => {
 					  console.error("There was an error", error);
+					  if (onFailure) {onFailure()}
 					});
 			},
 			petList: (token, user_id)=>{
@@ -61,10 +64,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 					fetch(process.env.BACKEND_URL + "/api/petlist", opts)
 					.then((resp) => {
-					  if (resp.status === 200) return resp;
+					  if (resp.status === 200) return resp.json();
 					})
 					.then(data => {
 					  console.log(data)
+					  setStore({petList:data.pets})
 					})
 					.catch((error) => {
 					  console.error("There was an error", error);

@@ -4,6 +4,7 @@ import registerbadge from "../../img/register-pet-badge.png";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { Context } from "../store/appContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export const RegisterPet = () => {
   const { store, actions } = useContext(Context);
@@ -15,10 +16,11 @@ export const RegisterPet = () => {
   const [qrCode, setQrCode] = useState("");
   const [input, setInput] = useState("");
   const [imageData, setimageData] = useState("");
+  const navigate = useNavigate();
 
   const handleCLick = (e) => {
     e.preventDefault();
-
+    const qrTest = Math.floor(Math.random() * 10000000000000000)
     const formData = new FormData();
     const token = sessionStorage.getItem("token")
     formData.append("file", input);
@@ -39,8 +41,15 @@ export const RegisterPet = () => {
             const photoURL = response.data.url;
             setimageData(photoURL);
             console.log(imageData, "yhis is image data")
-            actions.registerPet(name,species,important, photoURL, userId, qrCode,token)
-        
+          await actions.registerPet(name,species,important, photoURL, userId, qrTest,token,{
+            onSuccess: () => {
+            navigate("/pet-card")
+            },
+            onFailure: () => {
+              navigate("/error404")
+            }
+          })
+          
         } 
       } catch (error) {
         console.error(error);
@@ -109,22 +118,6 @@ export const RegisterPet = () => {
       {/* TEST USER ID */}
 
       {/* TEST QR CODE */}
-
-      <div className="petinfo d-flex flex-column mb-4">
-        <label for="petinfo" className="">
-          QR CODE
-        </label>
-        <input
-          value={qrCode}
-          onChange={(e) => {
-            setQrCode(e.target.value);
-          }}
-          type="text"
-          name="petinfo"
-          placeholder="Don't feed him French fries"
-          className="inputfield"
-        ></input>
-      </div>
 
       {/* TEST IMAGE UPLOAD */}
 

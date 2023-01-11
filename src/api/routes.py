@@ -53,15 +53,19 @@ def add_user():
 def add_pet():
 
     request_body = request.json
+    if (request_body["name"] == None):
+        return "The name is missing", 404
+    if (request_body["species"] == None):
+        return "The species is missing", 404
+    if (request_body["important"] == None):
+        return "The important is missing", 404
+    if (request_body["image"] == None):
+        return "The password is missing", 404  
     pet = Pet(request_body["name"], request_body["species"], request_body["important"], request_body["image"], request_body["user_id"], request_body["qr_code"] )
     db.session.add(pet)
     db.session.commit()
     
-    pets = Pet.query.all()
-    test =  list(map(lambda x: x.serialize(), pets))
-    response = jsonify(test)
-    
-    return response
+    return jsonify({"pet": pet.serialize()}), 200
 
 @api.route("/token", methods=["POST"])
 def get_token():
@@ -125,7 +129,7 @@ def list_pets():
     if pet == []:
         return "You have no friends", 200
  
-    return jsonify({"pet": list(map(lambda x: x.serialize(), pet))}), 200
+    return jsonify({"pets": list(map(lambda x: x.serialize(), pet))}), 200
 
 @api.route('/delete', methods=['DELETE'])
 def delete_all():

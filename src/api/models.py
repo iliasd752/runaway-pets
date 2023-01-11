@@ -73,7 +73,10 @@ class Pet(db.Model):
             "id": self.id,
             "name": self.name,
             "finder_id": self.finder_id,
-            "qr_code": self.qr_code
+            "qr_code": self.qr_code,
+            "important": self.important,
+            "image": self.image,
+            "species": self.species
             # do not serialize the password, its a security breach
         }
     def __init__(self, name, species, important, image, user_id, qr_code):
