@@ -87,7 +87,7 @@ export const RegisterUser = () => {
              <button onClick={handleCLick}  className="purplebutton w-25 text-center mt-5">Submit</button>
 
 
-            <a className="purplebutton w-25 text-center mt-2">Back to home</a>
+            <a className="purplebutton w-25 text-center mt-2" href="/">Back to home</a>
 
 			
 		

@@ -31,7 +31,7 @@ export const PetProfile = () => {
 
 
       <div className="mt-5">
-        <a className="purplebutton">Return to pet list</a>
+        <a className="purplebutton" href="pet-card">Return to pet list</a>
       </div>
 
 
