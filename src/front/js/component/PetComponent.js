@@ -18,6 +18,7 @@ export const PetComponent = (props) => {
           <h3 className="card_species">{props.species}</h3>
           <p>{props.important}</p>
           <a className="signup mb-4">See my QR Code</a>
+          <a className="signup mb-4">Delete pet</a>
         </div>
       </div>
     </div>
