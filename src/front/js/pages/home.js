@@ -12,15 +12,18 @@ export const Home = () => {
   const token = sessionStorage.getItem("token");
   const user_id = sessionStorage.getItem("user_id");
   const navigate = useNavigate();
-  const [activate, setActivate] = useState("hidden");
+  const [activate, setActivate] = useState(false);
+  const [failure, setFailure] = useState("")
 
   const handleClick = () => {
     actions.logIn(email, password, {
 		onSuccess: () => {
+      console.log("hello")
 			if (token && token!= "" && token!= undefined) navigate("/pet-card")
 		},
 		onFailure: () => {
-			
+      setFailure(sessionStorage.getItem("error"))
+			setActivate(true)
 		}
 	});
   };
@@ -78,7 +81,7 @@ export const Home = () => {
           </div>
 
           <div>
-            <p className="error" hidden>E-mail and password not valid</p>
+          { activate ? <p className="error">Error, please try again</p> : null } 
           </div>
         </div>
       </div>

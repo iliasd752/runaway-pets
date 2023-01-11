@@ -20,7 +20,56 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
-
+			registerPet: (name,species,important,photoURL,userId,qrCode,token)=>{
+				const opts = {
+					method: "POST",
+					headers: {
+					  'Content-Type': 'application/json',
+					  "Authorization": "Bearer "+ token
+					  },
+					body: JSON.stringify({
+						name: name,
+                		species: species,
+                		important: important,
+                		image: photoURL,
+                		user_id: userId,
+                		qr_code: qrCode
+					  })
+					}
+					fetch(process.env.BACKEND_URL + "/api/register_pet", opts)
+					.then((resp) => {
+					  if (resp.status === 200) return resp;
+					})
+					.then(data => {
+					  console.log(data)
+					  
+					})
+					.catch((error) => {
+					  console.error("There was an error", error);
+					});
+			},
+			petList: (token, user_id)=>{
+				const opts = {
+					method: "POST",
+					headers: {
+					  'Content-Type': 'application/json',
+					  "Authorization": "Bearer "+ token
+					  },
+					body: JSON.stringify({
+						user_id: user_id
+					  })
+					}
+					fetch(process.env.BACKEND_URL + "/api/petlist", opts)
+					.then((resp) => {
+					  if (resp.status === 200) return resp;
+					})
+					.then(data => {
+					  console.log(data)
+					})
+					.catch((error) => {
+					  console.error("There was an error", error);
+					});
+			},
 			logIn: (email, password, {onSuccess, onFailure} = {}) => {
 				const opts = {
 					method: "POST",

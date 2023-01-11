@@ -1,15 +1,17 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import registerbadge from "../../img/register-pet-badge.png";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { Context } from "../store/appContext";
 
 export const RegisterPet = () => {
+  const { store, actions } = useContext(Context);
   const [name, setName] = useState("");
   const [species, setSpecies] = useState("");
   const [important, setImportant] = useState("");
   const [image, setImage] = useState("");
-  const [userId, setUserId] = useState("");
+  const userId = sessionStorage.getItem("user_id")
   const [qrCode, setQrCode] = useState("");
   const [input, setInput] = useState("");
   const [imageData, setimageData] = useState("");
@@ -17,9 +19,8 @@ export const RegisterPet = () => {
   const handleCLick = (e) => {
     e.preventDefault();
 
-   
-
     const formData = new FormData();
+    const token = sessionStorage.getItem("token")
     formData.append("file", input);
     formData.append("upload_preset", "g8kqzblj");
 
@@ -38,23 +39,7 @@ export const RegisterPet = () => {
             const photoURL = response.data.url;
             setimageData(photoURL);
             console.log(imageData, "yhis is image data")
-
-            const authaxios = axios.create({
-              baseURL: env.BACKEND_URL,
-              headers: {
-                
-               Authorization: `Bearer ${token}` 
-              }
-            })
-
-                authaxios.post("/api/register_pet", {
-                "name": name,
-                "species": species,
-                "important": important,
-                "image": photoURL,
-                "user_id": userId,
-                "qr_code": qrCode
-            }) .then (console.log(response, "Hello"))
+            actions.registerPet(name,species,important, photoURL, userId, qrCode,token)
         
         } 
       } catch (error) {
@@ -122,22 +107,6 @@ export const RegisterPet = () => {
       </div>
 
       {/* TEST USER ID */}
-
-      <div className="petinfo d-flex flex-column mb-4">
-        <label for="petinfo" className="">
-          USER ID
-        </label>
-        <input
-          value={userId}
-          onChange={(e) => {
-            setUserId(e.target.value);
-          }}
-          type="text"
-          name="petinfo"
-          placeholder="Don't feed him French fries"
-          className="inputfield"
-        ></input>
-      </div>
 
       {/* TEST QR CODE */}
 
