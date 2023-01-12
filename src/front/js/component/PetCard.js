@@ -20,7 +20,7 @@ export const PetCard = () => {
       <div>
         <h3 className="mb-5">Hello, John! Here are your best friends</h3>
       </div>
-      <div className="d-flex">
+      <div className="d-flex container">
         {store && store.petList?.map((x)=><PetComponent key={x.qr_code} name={x.name} species={x.species} important={x.important} image={x.image}/>)}    
       </div>
 

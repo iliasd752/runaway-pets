@@ -22,6 +22,8 @@ import { PetComponent } from "./component/PetComponent";
 import { RegisterUser } from "./pages/RegisterUser";
 import { Error404 } from "./pages/Error404";
 import { Error400 } from "./pages/Error400";
+import { FoundPet } from "./pages/FoundPet"
+import { Notification } from "./pages/Notification"
 
 //create your first component
 const Layout = () => {
@@ -69,6 +71,14 @@ const Layout = () => {
     {
       path: "error400",
       element: <Error400 />,
+    },
+    {
+      path: "notification",
+      element: <Notification/>,
+    },
+    {
+      path: "found-pet",
+      element: <FoundPet />,
     },
   ]);
 

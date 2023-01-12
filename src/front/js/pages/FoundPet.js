@@ -4,7 +4,7 @@ import petpic from "../../img/dogprofile.png";
 import "../../styles/home.css";
 import { useEffect } from "react";
 
-export const Notification = () => {
+export const FoundPet = () => {
 	const { store, actions } = useContext(Context);
 	const token = sessionStorage.getItem("token");
 	const user = sessionStorage.getItem("user_id");
@@ -26,12 +26,13 @@ export const Notification = () => {
 
 		
 				<div className="form ml-5 d-flex flex-column align-self-center text-center">
-					<h1>Great news!!!</h1>
-                    <h1>Someone just found {store.petlist?.name}!</h1>
+					<h1>Marley</h1>
+                    <h3>{store.petlist?.species}!</h3>
 
-                    <h3>Call <strong>Jaussman</strong> at <strong>555 5555</strong> to set up a meeting.</h3>
-                    <h3 className="mt-4">Your best friend is in safe hands and you can find it here</h3>
-                    <a className="purplebutton ml-auto mt-1 mb-5 w-50 text-center align-self-center">I have my pet back!</a>
+                    <h3> <strong>Marley</strong> is so glad you found him!</h3>
+                    <h3>His owner Bruno is really worried now and will appreciate your help.</h3>
+                    <a className="purplebutton ml-auto mt-5 w-50 text-center align-self-center">Share your location with Bruno</a>
+                    <a className="purplebutton ml-auto mt-3 mb-5 w-50 text-center align-self-center">Call Bruno</a>
                 </div>
 			
 			
