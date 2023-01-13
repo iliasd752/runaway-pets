@@ -44,7 +44,13 @@ h3 {
     width: 300px;
     background-color: #7565A8;
     border-radius: 10px;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.344);
+    transition: 300ms;
+}
 
+.petcard:hover {
+    transform: scale(102%);
+    box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.154);;
 }
 
 .card_species {
