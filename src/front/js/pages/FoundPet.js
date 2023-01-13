@@ -3,9 +3,11 @@ import { Context } from "../store/appContext";
 import petpic from "../../img/dogprofile.png";
 import "../../styles/home.css";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export const FoundPet = () => {
 	const { store, actions } = useContext(Context);
+	const { qrcode } = useParams();
 	const token = sessionStorage.getItem("token");
 	const user = sessionStorage.getItem("user_id");
 	const test = {
@@ -13,6 +15,7 @@ export const FoundPet = () => {
 	  "name": "name"
 	}
 	useEffect(() => {
+		console.log({qrcode})
 	  actions.petList(token, user);
 	},[]);
 
@@ -22,8 +25,7 @@ export const FoundPet = () => {
 			<img className="registerbadge mb-5" src={petpic}></img>
 			
 
-			
-
+	
 		
 				<div className="form ml-5 d-flex flex-column align-self-center text-center">
 					<h1>Marley</h1>

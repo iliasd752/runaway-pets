@@ -67,6 +67,19 @@ def add_pet():
     
     return jsonify({"pet": pet.serialize()}), 200
 
+@api.route('/delete_pet', methods=['DELETE'])
+@jwt_required()
+def delete_pet():
+
+    qrcode = request.json.get("qr_code", None)
+    if qrcode == None:
+        return "Can't find qr_code and pet to delete", 404
+    pet= Pet.query.filter_by(qr_code=qrcode).first()
+    db.session.delete(pet)
+    db.session.commit()
+    
+    return jsonify({"pet": pet.serialize(),"message": "this pet was deleted"}), 200
+
 @api.route("/token", methods=["POST"])
 def get_token():
     email = request.json.get("email", None)

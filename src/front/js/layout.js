@@ -77,9 +77,10 @@ const Layout = () => {
       element: <Notification/>,
     },
     {
-      path: "found-pet",
+      path: "found-pet/:qrcode",
       element: <FoundPet />,
     },
+
   ]);
 
   return (

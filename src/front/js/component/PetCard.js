@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from "react";
 import petpic from "../../img/dog.png";
 import { PetComponent } from "./PetComponent";
 import { Context } from "../store/appContext";
+import { propTypes } from "react-bootstrap/esm/Image";
 
 
 export const PetCard = () => {
@@ -19,10 +20,10 @@ export const PetCard = () => {
   return (
     <div className="container d-flex flex-column mt-5 marginbottom align-items-center">
       <div>
-        <h3 className="mb-5">Hello, John! Here are your best friends</h3>
+        <h3 className="mb-5">Hello, ! Here are your best friends</h3>
       </div>
       <div className="container col col-12">
-        {store && store.petList?.map((x)=><PetComponent key={x.qr_code} name={x.name} species={x.species} important={x.important} image={x.image}/>)}    
+        {store && store.petList?.map((x)=><PetComponent key={x.qr_code} qrcode={x.qr_code} name={x.name} species={x.species} important={x.important} image={x.image}/>)}    
       </div>
 
       <div>
