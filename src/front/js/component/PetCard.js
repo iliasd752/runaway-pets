@@ -1,8 +1,9 @@
 import { Actions } from "@cloudinary/url-gen";
 import React, { useContext, useState, useEffect } from "react";
-import petpic from "../../img/dogprofile.png";
+import petpic from "../../img/dog.png";
 import { PetComponent } from "./PetComponent";
 import { Context } from "../store/appContext";
+
 
 export const PetCard = () => {
   const { store, actions } = useContext(Context);
@@ -20,7 +21,7 @@ export const PetCard = () => {
       <div>
         <h3 className="mb-5">Hello, John! Here are your best friends</h3>
       </div>
-      <div className="d-flex container">
+      <div className="container col col-12">
         {store && store.petList?.map((x)=><PetComponent key={x.qr_code} name={x.name} species={x.species} important={x.important} image={x.image}/>)}    
       </div>
 
@@ -29,6 +30,16 @@ export const PetCard = () => {
           Add a new pet
         </a>
       </div>
+
+
+      {/* MODAL */}
+
+      <div
+      className="modal show"
+      style={{ display: 'block', position: 'initial' }}
+    >
+    
+    </div>
     </div>
   );
 };

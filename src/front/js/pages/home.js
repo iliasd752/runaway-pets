@@ -19,7 +19,7 @@ export const Home = () => {
     actions.logIn(email, password, {
 		onSuccess: () => {
       console.log("hello")
-			if (token && token!= "" && token!= undefined) navigate("/pet-card")
+		  navigate("/pet-card")
 		},
 		onFailure: () => {
       setFailure(sessionStorage.getItem("error"))

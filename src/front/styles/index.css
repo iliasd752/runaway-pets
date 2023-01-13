@@ -194,3 +194,10 @@ input::file-selector-button {
   .marginbottom {
     margin-bottom: 150px;
   }
+
+  .blacktext {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+    align-self: center;
+  }

@@ -31,7 +31,7 @@ export const Notification = () => {
 
                     <h3>Call <strong>Jaussman</strong> at <strong>555 5555</strong> to set up a meeting.</h3>
                     <h3 className="mt-4">Your best friend is in safe hands and you can find it here</h3>
-                    <a className="purplebutton ml-auto mt-1 mb-5 w-50 text-center align-self-center">I have my pet back!</a>
+                    <a className="purplebutton ml-auto mt-5 mb-5 w-50 text-center align-self-center">I have my pet back!</a>
                 </div>
 			
 			
