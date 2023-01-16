@@ -23,6 +23,8 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "phone": self.phone,
+            "name": self.name,
             # do not serialize the password, its a security breach
         }
     def __init__(self, name, last_name, email, password, phone):
@@ -76,7 +78,8 @@ class Pet(db.Model):
             "qr_code": self.qr_code,
             "important": self.important,
             "image": self.image,
-            "species": self.species
+            "species": self.species,
+            "user_id": self.user_id
             # do not serialize the password, its a security breach
         }
     def __init__(self, name, species, important, image, user_id, qr_code):

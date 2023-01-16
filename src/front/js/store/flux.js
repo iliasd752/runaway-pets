@@ -1,3 +1,6 @@
+import { Navigate } from "react-router-dom";
+import { Error400 } from "../pages/Error400";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -14,7 +17,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					initial: "white"
 				}
 			],
-			petList: []
+			petList: [],
+			findPet: [],
+			findUser: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -74,6 +79,33 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  console.error("There was an error", error);
 					});
 			},
+
+			findPet: (qrcode)=>{
+				const opts = {
+					method: "POST",
+					headers: {
+					  'Content-Type': 'application/json'
+					  },
+					body: JSON.stringify({
+							  qr_code: qrcode.toString()
+					  })
+					}
+					fetch(process.env.BACKEND_URL + "/api/find_pet", opts)
+					.then((resp) => {
+						if (resp.status === 200) return resp.json();
+					  })
+					  .then(data => {
+						console.log(data)
+						setStore({findPet:data.pet})
+						setStore({findUser:data.user})
+					  })
+					  .catch((error) => {
+						console.error("There was an error", error);
+					  });
+			  
+			},
+
+
 			logIn: (email, password, {onSuccess, onFailure} = {}) => {
 				const opts = {
 					method: "POST",

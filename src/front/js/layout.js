@@ -25,6 +25,7 @@ import { Error400 } from "./pages/Error400";
 import { FoundPet } from "./pages/FoundPet"
 import { Notification } from "./pages/Notification"
 
+
 //create your first component
 const Layout = () => {
   //the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -80,6 +81,11 @@ const Layout = () => {
       path: "found-pet/:qrcode",
       element: <FoundPet />,
     },
+    {
+      path: "*",
+      element: <Error404 />
+    },
+    
 
   ]);
 

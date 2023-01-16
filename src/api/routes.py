@@ -80,6 +80,18 @@ def delete_pet():
     
     return jsonify({"pet": pet.serialize(),"message": "this pet was deleted"}), 200
 
+
+@api.route('/find_pet', methods=['POST'])
+def find_pet():
+
+    qrcode = request.json.get("qr_code", None)
+    if qrcode == None:
+        return "Can't find the pet", 404
+    pet= Pet.query.filter_by(qr_code=qrcode).first()
+
+    user= User.query.filter_by(id=pet.user_id).first()
+    return jsonify({"pet": pet.serialize(), "user":user.serialize()}), 200
+
 @api.route("/token", methods=["POST"])
 def get_token():
     email = request.json.get("email", None)

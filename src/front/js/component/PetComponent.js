@@ -49,7 +49,7 @@ export const PetComponent = (props) => {
 
   return (
     <div className="container d-flex flex-column mt-5 align-items-center">
-      <div className="d-flex flex-column justify-content-center petcard align-items-center mb-4 mr-4 ml-3">
+      <div className="d-flex flex-column justify-content-center petcardfound align-items-center mb-4 mr-4 ml-3">
         <div className="col  d-flex align-items-center justify-content-center ">
           <img className="petpiccard mr-5" src={props.image}></img>
     
@@ -71,7 +71,7 @@ export const PetComponent = (props) => {
           <Modal.Title className="blacktext">Print this tag and attach it to your pet's collar</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://3000-iliasd752-runawaypets-la8walngl3l.ws-eu82.gitpod.io/found-pet/${props.qrcode}`}></img>
+         <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://3000-iliasd752-runawaypets-5xf78g6apmi.ws-us82.gitpod.io/found-pet/${props.qrcode}`}></img>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>

@@ -71,6 +71,15 @@ h3 {
     border: 7px solid white
 }
 
+.petpiccard2 {
+    width: 450px;   
+    margin-top: 24px;
+    margin-bottom: 12px;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.344);
+    border-radius: 50%;
+    border: 7px solid white
+}
+
 .petpiccard:hover {
   
     box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.75);
@@ -153,6 +162,8 @@ input::file-selector-button {
     margin-top: 10px;
   }
 
+ 
+
 .purplebutton {
     text-decoration: none;
     color: white;
@@ -217,3 +228,23 @@ input::file-selector-button {
     text-align: center;
     align-self: center;
   }
+
+  .checkbox {
+    background: blue;
+    transition: box-shadow .3s;
+    border-radius: 50%;
+  }
+
+.checkbox:checked { 
+    box-shadow: inset 0 0 0 20px #7565A8;
+    border-radius: 50%;
+  }
+
+  .petcardfound {
+    width: 300px;
+    background-color: #7565A8;
+    border-radius: 10px;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.344);
+    border: 4px solid red;
+    transition: 300ms;
+}
