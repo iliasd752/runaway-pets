@@ -45,6 +45,7 @@ h3 {
     background-color: #7565A8;
     border-radius: 10px;
     box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.344);
+    border: 4px solid white;
     transition: 300ms;
 }
 
@@ -62,12 +63,21 @@ h3 {
 
 }
 .petpiccard {
-    width: 100px;   
-    margin-top: 12px;
+    width: 220px;   
+    margin-top: 24px;
     margin-bottom: 12px;
-  
-
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.344);
+    border-radius: 50%;
+    border: 7px solid white
 }
+
+.petpiccard:hover {
+  
+    box-shadow: 5px 5px 9px rgba(0, 0, 0, 0.75);
+    transform: scale(104%);
+    transition: 200ms;
+}
+
 .homelogo {
     width: 300px;
     align-self: center;
