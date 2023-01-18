@@ -1,6 +1,6 @@
 import React, {useRef, useEffect} from "react";
       
-const MAP_KEY = "AIzaSyBRvJfMguSSTm7y8FG4oXVYUNPEyFTrolE";
+const MAP_KEY = "AIzahrshbsedgvasvawsvgE";
 const GMaps = ({ placeName }) => {
     const googleMapRef = useRef();
     let googleMap;
