@@ -24,6 +24,7 @@ import { Error404 } from "./pages/Error404";
 import { Error400 } from "./pages/Error400";
 import { FoundPet } from "./pages/FoundPet"
 import { Notification } from "./pages/Notification"
+import GMaps from "./component/Location";
 
 
 //create your first component
@@ -85,6 +86,10 @@ const Layout = () => {
       path: "*",
       element: <Error404 />
     },
+    {
+      path: "gmaps",
+      element: <GMaps />
+    }
     
 
   ]);
