@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Children, Fragment, useEffect } from "react";
 import {
   BrowserRouter,
   createBrowserRouter,
   Route,
   Routes,
   RouterProvider,
+  useLocation,
 } from "react-router-dom";
 
 
@@ -33,10 +34,18 @@ const Layout = () => {
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
 
+  const NavigationWrapper = (props) => {
+    const location = useLocation();
+    useEffect(() => {
+      console.log("location has changed", location)
+    }, [location])
+    return <>{props.children}</>
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <NavigationWrapper><Home /></NavigationWrapper>,
     },
     {
       path: "/register-pet",

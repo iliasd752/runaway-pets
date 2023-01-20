@@ -39,8 +39,8 @@ class Finder(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
     phone = db.Column(db.Integer, unique=True, nullable=False)
-    location = db.Column(db.String(120), unique=False, nullable=False)
-
+    lat = db.Column(db.Float, unique=False, nullable=True)
+    lng = db.Column(db.Float, unique=False, nullable=True)
 
     def __repr__(self):
         return f'<Finder {self.name}>'
@@ -51,10 +51,11 @@ class Finder(db.Model):
             "name": self.name,
             # do not serialize the password, its a security breach
         }
-    def __init__(self, name, phone, location):
+    def __init__(self, name, phone, lat, lng):
         self.name = name
         self.phone = phone
-        self.location = location
+        self.lat = lat
+        self.lng = lng
 
 class Pet(db.Model):
     __tablename__ = 'pet'

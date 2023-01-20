@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import petpic from "../../img/dogprofile.png";
 import "../../styles/home.css";
@@ -8,6 +8,10 @@ import { useParams } from "react-router-dom";
 export const FoundPet = () => {
   const { store, actions } = useContext(Context);
   const { qrcode } = useParams();
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState({});
+
 
   const user = sessionStorage.getItem("user_id");
   const test = {
@@ -18,6 +22,26 @@ export const FoundPet = () => {
     console.log({ qrcode });
     actions.findPet(qrcode);
   }, []);
+  const finderSubmit = (e) => {
+    console.log(name, phone, location);
+    actions.finderFetch(qrcode, name, phone, location);
+  }
+  const handleLocation = (checked) => {
+    if (checked) {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          console.log(position);
+          setLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          });
+        });
+      } else {
+        // I believe it may also mean geolocation isn't supported
+        alert("Geolocation denied");
+      }
+    } else setLocation({})
+  }
 
   return (
     <div className="mt-5 container d-flex flex-column">
@@ -47,7 +71,7 @@ export const FoundPet = () => {
           <input
            
             onChange={(e) => {
-              setImportant(e.target.value);
+              setName(e.target.value);
             }}
             type="text"
             name="petinfo"
@@ -64,7 +88,7 @@ export const FoundPet = () => {
           <input
            
             onChange={(e) => {
-              setImportant(e.target.value);
+              setPhone(e.target.value);
             }}
             type="text"
             name="petinfo"
@@ -73,24 +97,24 @@ export const FoundPet = () => {
           ></input>
         </div>
 
-		{/* CHECKBOX */}
+		{/* INPUT */}
 		<div className="petinfo d-flex flex-column mb-4">
-          <label for="petinfo" className="chackbox">
+          <label for="petinfo" className="">
             Share your location with {store.findUser.name}?
           </label>
           <input
            
             onChange={(e) => {
-              setImportant(e.target.value);
+              handleLocation(e.target.value);
             }}
             type="checkbox"
             name="petinfo"
             placeholder="Type your phone number here"
-            className="checkbox align-self-center"
+            className="align-self-center"
           ></input>
         </div>
 		</div>
-		<a  className="purplebutton w-25 text-center mt-5 align-self-center">
+		<a  className="purplebutton w-25 text-center mt-5 align-self-center" onClick={finderSubmit}>
         Submit
       </a>
         {/* <a className="purplebutton ml-auto mt-5 w-50 text-center align-self-center">
