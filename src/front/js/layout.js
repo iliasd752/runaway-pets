@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Children, Fragment, useEffect } from "react";
 import {
   BrowserRouter,
   createBrowserRouter,
   Route,
   Routes,
   RouterProvider,
+  useLocation,
 } from "react-router-dom";
 
 
@@ -24,7 +25,11 @@ import { Error404 } from "./pages/Error404";
 import { Error400 } from "./pages/Error400";
 import { FoundPet } from "./pages/FoundPet"
 import { Notification } from "./pages/Notification"
+
+import GMaps from "./component/Location";
+
 import { ThankYou } from "./pages/ThankYou";
+
 
 
 //create your first component
@@ -33,10 +38,18 @@ const Layout = () => {
   // you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
   const basename = process.env.BASENAME || "";
 
+  const NavigationWrapper = (props) => {
+    const location = useLocation();
+    useEffect(() => {
+      console.log("location has changed", location)
+    }, [location])
+    return <>{props.children}</>
+  }
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
+      element: <NavigationWrapper><Home /></NavigationWrapper>,
     },
     {
       path: "/register-pet",
@@ -90,6 +103,10 @@ const Layout = () => {
       path: "*",
       element: <Error404 />
     },
+    {
+      path: "gmaps",
+      element: <GMaps />
+    }
     
 
   ]);

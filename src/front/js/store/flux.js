@@ -1,3 +1,4 @@
+import { name } from "@cloudinary/url-gen/actions/namedTransformation";
 import { Navigate } from "react-router-dom";
 import { Error400 } from "../pages/Error400";
 
@@ -19,7 +20,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			petList: [],
 			findPet: [],
-			findUser: []
+			findUser: [],
+			location: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -131,6 +133,39 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  console.error("There was an error", error);
 					  if (onFailure) {onFailure()}
 					});
+			},
+
+			finderFetch: (qrcode, name, phone, location)=> {
+				const opts = {
+					method: "POST",
+					headers: {
+					  'Content-Type': 'application/json'
+					  },
+					body: JSON.stringify({
+							  qr_code: qrcode.toString(),
+							  name: name,
+							  phone: phone,
+							  lat: location.lat,
+							  lng: location.lng
+
+					  })
+					}
+					fetch(process.env.BACKEND_URL + "/api/scan_pet", opts)
+					.then((resp) => {
+						if (resp.status === 200) return resp.json();
+					  })
+					  .then(data => {
+						console.log(data)
+					  })
+					  .catch((error) => {
+						console.error("There was an error", error);
+					  });
+			  
+			},
+
+			storeLocation: (position) => {
+				setStore({ location: position })
+
 			},
 
 			getMessage: async () => {

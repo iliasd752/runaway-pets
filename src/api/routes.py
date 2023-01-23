@@ -118,7 +118,7 @@ def scan_pet():
     request_qrcode = request_body["qr_code"]
     pet = Pet.query.filter_by(qr_code=request_qrcode).first()
     
-    finder = Finder(request_body["name"], request_body["phone"], request_body["location"])
+    finder = Finder(request_body["name"], request_body["phone"], request_body["lat"], request_body["lng"])
     
     db.session.add(finder)
     db.session.commit()
