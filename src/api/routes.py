@@ -152,7 +152,7 @@ def list_pets():
 
     pet = Pet.query.filter_by(user_id=request_userId).all()
     if pet == []:
-        return "You have no friends", 200
+        return jsonify({"pets": []}), 200
  
     return jsonify({"pets": list(map(lambda x: x.serialize(), pet))}), 200
 
