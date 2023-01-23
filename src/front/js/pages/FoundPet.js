@@ -11,6 +11,7 @@ export const FoundPet = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [location, setLocation] = useState({});
+  const [call, setCall] = useState(false);
 
 
   const user = sessionStorage.getItem("user_id");
@@ -24,7 +25,7 @@ export const FoundPet = () => {
   }, []);
   const finderSubmit = (e) => {
     console.log(name, phone, location);
-    actions.finderFetch(qrcode, name, phone, location);
+    actions.finderFetch(qrcode, name, phone, location,{onSuccess:()=>{setCall(true)}});
   }
   const handleLocation = (checked) => {
     if (checked) {
@@ -35,6 +36,7 @@ export const FoundPet = () => {
             lat: position.coords.latitude,
             lng: position.coords.longitude
           });
+          console.log(location.lat, "testloc")
         });
       } else {
         // I believe it may also mean geolocation isn't supported
@@ -51,20 +53,23 @@ export const FoundPet = () => {
       ></img>
 
       <div className="form ml-5 d-flex flex-column align-self-center text-center">
-        <h1>{store.findPet.name} </h1>
-        <h3>{store.findPet.species}</h3>
+        {!call &&<h1>{store.findPet.name} </h1>}
+        {!call &&<h3>{store.findPet.species}</h3>}
 
-        <h3>
+        {!call &&<h3>
           {" "}
           <strong>{store.findPet.name}</strong> is so glad you found them!
-        </h3>
-        <h3>
+        </h3>}
+        {!call &&<h3>
           His owner {store.findUser.name} misses them and will appreciate your
           help.
-        </h3>
+        </h3>}
 		<div className="d-flex flex-column justify-content-center">
 		{/* NAME FIELD */}
-        <div className="petinfo d-flex flex-column mb-4 justify-content-center">
+        {call &&<h3>
+          Thank you so much
+        </h3>} 
+        {!call &&<div className="petinfo d-flex flex-column mb-4 justify-content-center">
           <label for="petinfo" className="justify-content-center">
             What is your name?
           </label>
@@ -78,10 +83,10 @@ export const FoundPet = () => {
             placeholder="Type your name here"
             className="inputfield align-self-center"
           ></input>
-        </div>
+        </div>}
 
 		{/* PHONE NUMBER FIELD */}
-		<div className="petinfo d-flex flex-column mb-4">
+		{!call && <div className="petinfo d-flex flex-column mb-4">
           <label for="petinfo" className="">
             What is your phone number?
           </label>
@@ -95,10 +100,10 @@ export const FoundPet = () => {
             placeholder="Type your phone number here"
             className="inputfield align-self-center"
           ></input>
-        </div>
+        </div>}
 
 		{/* INPUT */}
-		<div className="petinfo d-flex flex-column mb-4">
+		{!call && <div className="petinfo d-flex flex-column mb-4">
           <label for="petinfo" className="">
             Share your location with {store.findUser.name}?
           </label>
@@ -112,20 +117,19 @@ export const FoundPet = () => {
             placeholder="Type your phone number here"
             className="align-self-center"
           ></input>
-        </div>
+        </div>}
 		</div>
-		<a  className="purplebutton w-25 text-center mt-5 align-self-center" onClick={finderSubmit}>
-        Submit
-      </a>
+		{!call &&<button disabled={!location.lat && !location.lng} className="purplebutton w-25 text-center mt-5 align-self-center" onClick={finderSubmit}>
+        Submit </button>}
         {/* <a className="purplebutton ml-auto mt-5 w-50 text-center align-self-center">
           Share your location with {store.findUser.name}
         </a> */}
-        <a
+        {call && <a
           href={store.findUser.phone}
           className="purplebutton ml-auto mt-3 mb-5 w-50 text-center align-self-center"
         >
           Call {store.findUser.name}
-        </a>
+        </a>}
       </div>
     </div>
   );

@@ -135,7 +135,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					});
 			},
 
-			finderFetch: (qrcode, name, phone, location)=> {
+			finderFetch: (qrcode, name, phone, location, {onSuccess, onFailure} = {})=> {
 				const opts = {
 					method: "POST",
 					headers: {
@@ -156,6 +156,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  })
 					  .then(data => {
 						console.log(data)
+						if (onSuccess) {
+							onSuccess()}
 					  })
 					  .catch((error) => {
 						console.error("There was an error", error);
