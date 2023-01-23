@@ -25,7 +25,11 @@ import { Error404 } from "./pages/Error404";
 import { Error400 } from "./pages/Error400";
 import { FoundPet } from "./pages/FoundPet"
 import { Notification } from "./pages/Notification"
+
 import GMaps from "./component/Location";
+
+import { ThankYou } from "./pages/ThankYou";
+
 
 
 //create your first component
@@ -86,6 +90,10 @@ const Layout = () => {
     {
       path: "notification",
       element: <Notification />,
+    },
+    {
+      path: "thankyou",
+      element: <ThankYou />,
     },
     {
       path: "found-pet/:qrcode",
