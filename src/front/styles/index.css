@@ -249,5 +249,18 @@ input::file-selector-button {
     transition: 300ms;
 }
 #active {
-color:red;
+color:white;
+background-color: red;
+display: block;
+margin-left: 6px;
+margin-right: 6px;
+padding-left: 16px;
+padding-right: 16px;
+padding-top: 7px;
+padding-bottom: 0px;
+border-radius: 20px;
+}
+
+#inactive {
+    display: none;
 }
