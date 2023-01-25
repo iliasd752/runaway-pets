@@ -140,6 +140,29 @@ def give_pet():
     
     return response
 
+@api.route('/finderlist', methods=['POST'])
+def finder_list():
+
+    request_body = request.json
+    if request_body["finder_list"] == None:
+        return "No finder list", 404
+    request_finderList = request_body["finder_list"]
+
+    finders= list(map(lambda x: Finder.query.filter_by(id=x).first(), request_finderList))
+    if finders == []:
+        return jsonify({"finders": []}), 200
+ 
+    return jsonify({"finders": list(map(lambda x: x.serialize(), finders))}), 200
+
+@api.route('/hellofinder', methods=['GET'])
+def give_finder():
+
+    users = Finder.query.all()
+    test =  list(map(lambda x: x.serialize(), users))
+    response = jsonify(test)
+    
+    return response
+
 @api.route('/petlist', methods=['POST'])
 @jwt_required()
 def list_pets():

@@ -262,5 +262,11 @@ border-radius: 20px;
 }
 
 #inactive {
-    display: none;
+    color: white;
+}
+
+.mapelement {
+    height: 850px;
+    width: 850px;
+    border-radius: 24px;
 }
