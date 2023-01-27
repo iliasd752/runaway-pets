@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import homelogo from "../../img/homelogo.png";
 import "../../styles/home.css";
-import { NewNav } from "../component/NewNav";
 import { Navigate, useNavigate } from "react-router-dom";
 
 export const Home = () => {

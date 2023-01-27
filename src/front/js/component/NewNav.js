@@ -11,7 +11,6 @@ export const NewNav = () => {
 const { store, actions } = useContext(Context);
 const token = sessionStorage.getItem("token");
 const user = sessionStorage.getItem("user_id");
-const [count, setCount] = useState(0);
 const [notification, setNotification] = useState(false)
 
 useEffect(() => {

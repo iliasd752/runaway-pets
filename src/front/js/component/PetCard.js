@@ -1,6 +1,4 @@
-import { Actions } from "@cloudinary/url-gen";
 import React, { useContext, useState, useEffect } from "react";
-import petpic from "../../img/dog.png";
 import { PetComponent } from "./PetComponent";
 import { Context } from "../store/appContext";
 
@@ -9,9 +7,7 @@ export const PetCard = () => {
   const { store, actions } = useContext(Context);
   const token = sessionStorage.getItem("token");
   const user = sessionStorage.getItem("user_id");
-  const test = {
-    "species": "dog"
-  }
+
   useEffect(() => {
     actions.petList(token, user);
   },[]);

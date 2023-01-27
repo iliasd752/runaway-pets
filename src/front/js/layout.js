@@ -1,9 +1,6 @@
-import React, { Children, Fragment, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
-  BrowserRouter,
   createBrowserRouter,
-  Route,
-  Routes,
   RouterProvider,
   useLocation,
 } from "react-router-dom";

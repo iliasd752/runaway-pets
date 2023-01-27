@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import registerbadge from "../../img/register-pet-badge.png";
-import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
