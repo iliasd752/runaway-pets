@@ -70,7 +70,7 @@ export const PetComponent = (props) => {
           <Modal.Title className="blacktext">Print this tag and attach it to your pet's collar</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-         <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://3000-iliasd752-runawaypets-tpov4raddlt.ws-us84.gitpod.io/found-pet/${props.qrcode}`}></img>
+         <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${process.env.FRONTEND_URL}/found-pet/${props.qrcode}`}></img>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
