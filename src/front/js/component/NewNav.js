@@ -37,8 +37,7 @@ useEffect(() => {
 const checkFinder= ()=>{
   const test = store.petList.some(pet => pet.finder_id !=null)
   if (test==true) {setNotification(true)}
-  console.log(store.petlist.pets, "This is the finder info")
-  console.log(test, "this is findertest")
+  
 }
 
 

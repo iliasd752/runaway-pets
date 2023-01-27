@@ -21,7 +21,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			petList: [],
 			findPet: [],
 			findUser: [],
-			location: []
+			location: [],
+			findFinder: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -74,7 +75,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					  if (resp.status === 200) return resp.json();
 					})
 					.then(data => {
-					  console.log(data)
+					  console.log(data, "this is the petlist from the backend, runs on navbar")
 					  setStore({petList:data.pets})
 					})
 					.catch((error) => {
@@ -158,6 +159,29 @@ const getState = ({ getStore, getActions, setStore }) => {
 						console.log(data)
 						if (onSuccess) {
 							onSuccess()}
+					  })
+					  .catch((error) => {
+						console.error("There was an error", error);
+					  });
+			  
+			},
+			findFinder: (finder_id)=>{
+				const opts = {
+					method: "POST",
+					headers: {
+					  'Content-Type': 'application/json'
+					  },
+					body: JSON.stringify({
+							  finder_list: finder_id
+					  })
+					}
+					fetch(process.env.BACKEND_URL + "/api/finderlist", opts)
+					.then((resp) => {
+						if (resp.status === 200) return resp.json();
+					  })
+					  .then(data => {
+						console.log(data, "this is findertable from backend")
+						setStore({findFinder:data.finders})
 					  })
 					  .catch((error) => {
 						console.error("There was an error", error);

@@ -45,7 +45,7 @@ const Layout = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <NavigationWrapper><Home /></NavigationWrapper>,
+      element: <Home />,
     },
     {
       path: "/register-pet",

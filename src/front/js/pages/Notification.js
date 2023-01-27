@@ -3,42 +3,43 @@ import petpic from "../../img/dogprofile.png";
 import "../../styles/home.css";
 import GMaps from "../component/Location";
 import { Context } from "../store/appContext";
+import { PetComponent } from "../component/PetComponent";
+import { FoundComponent } from "../component/FoundComponent";
 
 export const Notification = () => {
 	const { store, actions } = useContext(Context);
 	const [petFounds, setPetFounds] = useState([]); 
+  const token = sessionStorage.getItem("token");
+  const user = sessionStorage.getItem("user_id");
 
 
 	useEffect(() => {
-		store.petList.filter((pet) => pet.finder_id)
-
-			
+		actions.petList(token, user);
+		
 	}, [])  
+  useEffect(() => {
+      if (store.petList){
+      setPetFounds(store.petList.filter(pet => pet.finder_id))}
+    
+  }, [store.petList]);
+  useEffect(() => {
+      console.log(petFounds)
+      if (petFounds.length){
+      actions.findFinder(petFounds.map(x=>x.finder_id))};
+  }, [petFounds]);
 
-
+  if (!petFounds?.length){
+    return null
+  }
   return (
     <div className="mt-5 container d-flex flex-column">
-      <img className="registerbadge mb-5" src={petpic}></img>
 
-      <div className="form ml-5 d-flex flex-column align-self-center text-center">
-        <h1>Great news!!!</h1>
-        <h1>Someone just found!</h1>
-
-        <h3>
-          Call <strong>Jaussman</strong> at <strong>555 5555</strong> to set up
-          a meeting.
-        </h3>
-        <h3 className="mt-4">
-          Your best friend is in safe hands and you can find it here
-        </h3>
-
-        <div className="mapelement container">
-          <GMaps className="mapelement container" />
-        </div>
-        <a className="purplebutton ml-auto mt-5 mb-5 w-50 text-center align-self-center">
-          I have my pet back!
-        </a>
-      </div>
+      {petFounds.map((x)=>{
+      const finder = store.findFinder.find((f)=>f.id==x.finder_id)
+      
+      return <FoundComponent name={finder?.name} petName={x?.name}/>})}
+      
+     
     </div>
   );
 };
