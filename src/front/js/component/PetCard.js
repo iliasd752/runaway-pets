@@ -3,7 +3,6 @@ import React, { useContext, useState, useEffect } from "react";
 import petpic from "../../img/dog.png";
 import { PetComponent } from "./PetComponent";
 import { Context } from "../store/appContext";
-import { propTypes } from "react-bootstrap/esm/Image";
 
 
 export const PetCard = () => {

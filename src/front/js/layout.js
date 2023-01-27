@@ -18,7 +18,6 @@ import { PetProfile } from "./pages/PetProfile";
 import { FinderInfo } from "./pages/FinderInfo";
 import { PetCard } from "./component/PetCard";
 import { NewNav } from "./component/NewNav";
-import { Settings } from "./pages/Settings";
 import { PetComponent } from "./component/PetComponent";
 import { RegisterUser } from "./pages/RegisterUser";
 import { Error404 } from "./pages/Error404";
@@ -70,10 +69,6 @@ const Layout = () => {
     {
       path: "/pet-card",
       element: <PetCard />,
-    },
-    {
-      path: "/settings",
-      element: <Settings />,
     },
     {
       path: "pet-component",
