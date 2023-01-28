@@ -12,7 +12,7 @@ export const RegisterPet = () => {
   const [species, setSpecies] = useState("");
   const [important, setImportant] = useState("");
   const [image, setImage] = useState("");
-  const userId = sessionStorage.getItem("user_id")
+  const userId = sessionStorage.getItem("user_id");
   const [qrCode, setQrCode] = useState("");
   const [input, setInput] = useState("");
   const [imageData, setimageData] = useState("");
@@ -20,9 +20,9 @@ export const RegisterPet = () => {
 
   const handleCLick = (e) => {
     e.preventDefault();
-    const qrTest = Math.floor(Math.random() * 10000000000000000)
+    const qrTest = Math.floor(Math.random() * 10000000000000000);
     const formData = new FormData();
-    const token = sessionStorage.getItem("token")
+    const token = sessionStorage.getItem("token");
     formData.append("file", input);
     formData.append("upload_preset", "g8kqzblj");
 
@@ -32,31 +32,36 @@ export const RegisterPet = () => {
           "https://api.cloudinary.com/v1_1/dbw5oujiu/image/upload",
           formData
         );
-        console.log(response);
+        //  // console.log(response);
         const testing = response.data.url;
-        
 
         if (response.status == 200) {
-
-            const photoURL = response.data.url;
-            setimageData(photoURL);
-            console.log(imageData, "yhis is image data")
-          await actions.registerPet(name,species,important, photoURL, userId, qrTest,token,{
-            onSuccess: () => {
-            navigate("/pet-card")
-            },
-            onFailure: () => {
-              navigate("/error404")
+          const photoURL = response.data.url;
+          setimageData(photoURL);
+          // // console.log(imageData, "yhis is image data")
+          await actions.registerPet(
+            name,
+            species,
+            important,
+            photoURL,
+            userId,
+            qrTest,
+            token,
+            {
+              onSuccess: () => {
+                navigate("/pet-card");
+              },
+              onFailure: () => {
+                navigate("/error404");
+              },
             }
-          })
-          
-        } 
+          );
+        }
       } catch (error) {
         console.error(error);
       }
     };
-    postImage()
-    
+    postImage();
   };
 
   return (
@@ -135,9 +140,7 @@ export const RegisterPet = () => {
         ></input>
       </div>
 
-      <img src={imageData} alt="test" width="140" height="130"/>
-
-     
+      <img src={imageData} alt="test" width="140" height="130" />
 
       <button
         onClick={handleCLick}

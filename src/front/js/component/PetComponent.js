@@ -33,7 +33,7 @@ export const PetComponent = (props) => {
         window.location.reload(true);
       })
       .then(data => {
-        console.log(data)
+       // // console.log(data)
       })
       .catch((error) => {
         console.error("There was an error", error);

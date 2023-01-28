@@ -12,19 +12,19 @@ export const Home = () => {
   const user_id = sessionStorage.getItem("user_id");
   const navigate = useNavigate();
   const [activate, setActivate] = useState(false);
-  const [failure, setFailure] = useState("")
+  const [failure, setFailure] = useState("");
 
   const handleClick = () => {
     actions.logIn(email, password, {
-		onSuccess: () => {
-      console.log("hello")
-		  navigate("/pet-card")
-		},
-		onFailure: () => {
-      setFailure(sessionStorage.getItem("error"))
-			setActivate(true)
-		}
-	});
+      onSuccess: () => {
+        // // console.log("hello")
+        navigate("/pet-card");
+      },
+      onFailure: () => {
+        setFailure(sessionStorage.getItem("error"));
+        setActivate(true);
+      },
+    });
   };
 
   return (
@@ -80,7 +80,7 @@ export const Home = () => {
           </div>
 
           <div>
-          { activate ? <p className="error">Error, please try again</p> : null } 
+            {activate ? <p className="error">Error, please try again</p> : null}
           </div>
         </div>
       </div>

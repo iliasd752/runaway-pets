@@ -5,10 +5,8 @@ import {
   useLocation,
 } from "react-router-dom";
 
-
 import { Home } from "./pages/home";
 import injectContext from "./store/appContext";
-
 
 import { RegisterPet } from "./pages/RegisterPet";
 import { PetProfile } from "./pages/PetProfile";
@@ -19,14 +17,12 @@ import { PetComponent } from "./component/PetComponent";
 import { RegisterUser } from "./pages/RegisterUser";
 import { Error404 } from "./pages/Error404";
 import { Error400 } from "./pages/Error400";
-import { FoundPet } from "./pages/FoundPet"
-import { Notification } from "./pages/Notification"
+import { FoundPet } from "./pages/FoundPet";
+import { Notification } from "./pages/Notification";
 
 import GMaps from "./component/Location";
 
 import { ThankYou } from "./pages/ThankYou";
-
-
 
 //create your first component
 const Layout = () => {
@@ -37,10 +33,10 @@ const Layout = () => {
   const NavigationWrapper = (props) => {
     const location = useLocation();
     useEffect(() => {
-      console.log("location has changed", location)
-    }, [location])
-    return <>{props.children}</>
-  }
+      // // console.log("location has changed", location)
+    }, [location]);
+    return <>{props.children}</>;
+  };
 
   const router = createBrowserRouter([
     {
@@ -93,14 +89,12 @@ const Layout = () => {
     },
     {
       path: "*",
-      element: <Error404 />
+      element: <Error404 />,
     },
     {
       path: "gmaps",
-      element: <GMaps />
-    }
-    
-
+      element: <GMaps />,
+    },
   ]);
 
   return (

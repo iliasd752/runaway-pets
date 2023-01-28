@@ -49,6 +49,9 @@ class Finder(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "phone": self.phone,
+            "lat": self.lat,
+            "lng": self.lng
             # do not serialize the password, its a security breach
         }
     def __init__(self, name, phone, lat, lng):
