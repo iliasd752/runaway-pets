@@ -55,18 +55,6 @@ const checkFinder= ()=>{
             <Nav.Link href="/pet-card">Pets</Nav.Link>
             <Nav.Link href="/notification" id={notification?"active":"inactive"}>Notification</Nav.Link>
             <Nav.Link href="/found-pet">Found Pet</Nav.Link>
-            <Nav.Link href="/register-user">Register</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="error400">Error 400</NavDropdown.Item>
-              <NavDropdown.Item href="error404">
-                Error404
-              </NavDropdown.Item>
-              <NavDropdown.Item href="pet-component">Pet Component</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="settings">
-                Settings
-              </NavDropdown.Item>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
