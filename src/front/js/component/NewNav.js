@@ -16,6 +16,7 @@ const navigate = redirect();
 
 
 const handleClicklogout = () => {
+  sessionStorage.clear();
   console.log("logout clicked");
     }
 
@@ -61,7 +62,7 @@ const checkFinder= ()=>{
           <Nav className="me-auto">
             <Nav.Link href="/pet-card">Pets</Nav.Link>
             <Nav.Link href="/notification" id={notification?"active":"inactive"}>Notification</Nav.Link>
-            <Nav.Link href="/pet-card" onClick={handleClicklogout}>Logout</Nav.Link>
+            <Nav.Link href="/" onClick={handleClicklogout}>Logout</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
