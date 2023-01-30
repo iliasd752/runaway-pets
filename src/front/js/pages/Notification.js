@@ -6,12 +6,13 @@ import { Context } from "../store/appContext";
 import { PetComponent } from "../component/PetComponent";
 import { FoundComponent } from "../component/FoundComponent";
 
+
 export const Notification = () => {
   const { store, actions } = useContext(Context);
   const [petFounds, setPetFounds] = useState([]);
   const token = sessionStorage.getItem("token");
   const user = sessionStorage.getItem("user_id");
-
+  
   useEffect(() => {
     actions.petList(token, user);
   }, []);
@@ -46,5 +47,6 @@ export const Notification = () => {
         );
       })}
     </div>
+    
   );
 };

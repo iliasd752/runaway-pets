@@ -37,7 +37,8 @@ const Layout = () => {
     }, [location]);
     return <>{props.children}</>;
   };
-
+  const token = sessionStorage.getItem("token");
+  console.log(token, "this is token")
   const router = createBrowserRouter([
     {
       path: "/",
@@ -94,12 +95,12 @@ const Layout = () => {
     {
       path: "gmaps",
       element: <GMaps />,
-    },
+    }
   ]);
 
   return (
     <div>
-      <NewNav />
+      {token!=null ? <NewNav />:console.log("nonav")}
       <RouterProvider router={router} />
     </div>
   );

@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from "react";
 
+
 const MAP_KEY = process.env.MAP_KEY;
-const GMaps = ({ placeName }) => {
+const GMaps = ({ placeName }) => { 
   const googleMapRef = useRef();
   let googleMap;
   const showPosition = (position) => {
