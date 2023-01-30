@@ -39,6 +39,7 @@ export const Notification = () => {
         return (
           <FoundComponent
             name={finder?.name}
+            image={x?.image}
             petName={x?.name}
             phone={finder?.phone}
             lat={finder?.lat}
