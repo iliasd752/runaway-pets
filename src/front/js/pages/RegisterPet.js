@@ -140,8 +140,6 @@ export const RegisterPet = () => {
         ></input>
       </div>
 
-      <img src={imageData} alt="test" width="140" height="130" />
-
       <button
         onClick={handleCLick}
         className="purplebutton w-25 text-center mt-5"
@@ -149,11 +147,9 @@ export const RegisterPet = () => {
         Submit
       </button>
 
-      <a onClick={handleCLick} className="purplebutton w-25 text-center mt-5">
-        Submit
-      </a>
+    
 
-      <a className="purplebutton w-25 text-center mt-2">Back to home</a>
+       {/*<a className="purplebutton w-25 text-center mt-2">Back to home</a>*/}
     </div>
   );
 };

@@ -67,7 +67,7 @@ export const FoundPet = () => {
         )}
         {!call && (
           <h3>
-            His owner {store.findUser.name} misses them and will appreciate your
+            Their owner {store.findUser.name} misses them and will appreciate your
             help.
           </h3>
         )}
