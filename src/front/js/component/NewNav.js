@@ -22,25 +22,25 @@ const handleClicklogout = () => {
 
 
 
-// useEffect(() => {
-//   const fetch = setTimeout(() => {
-//   actions.petList(token, user);
-// }, 5000);
-// return ()=>{
-//   clearTimeout(fetch);
-// }
+useEffect(() => {
+  const fetch = setTimeout(() => {
+   actions.petList(token, user);
+ }, 5000);
+ return ()=>{
+  clearTimeout(fetch);
+}
  
-// },[]);
+ },[]);
 
-// // useEffect(() => {
-//   const timeout = setTimeout(() => {
-//     checkFinder();
+ useEffect(() => {
+   const timeout = setTimeout(() => {
+     checkFinder();
 
-//   }, 3000);
-//   return ()=>{
-//     clearTimeout(timeout);
-//   }
-// },[]);
+   }, 3000);
+   return ()=>{
+    clearTimeout(timeout);
+   }
+ },[]);
 
 
 const checkFinder= ()=>{
