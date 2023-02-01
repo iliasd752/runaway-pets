@@ -18,6 +18,7 @@ export const FoundComponent = (props) => {
   return <GoogleMap zoom={10} center={{lat: 44, lng:-80}}>
     <Marker position={{lat: 44, lgn: -80}} />
   </GoogleMap>
+
 }
 
   return (
@@ -31,6 +32,7 @@ export const FoundComponent = (props) => {
         <h3 className="mt-4">{props.petName}</h3>
         <div className="mapelement container">
         {!isLoaded ? <div>Loading..</div> : <div>Map not showing</div>}
+       
    
         </div>
         <a className="purplebutton ml-auto mt-5 mb-5 w-50 text-center align-self-center">
