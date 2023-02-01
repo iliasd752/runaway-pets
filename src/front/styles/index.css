@@ -29,6 +29,12 @@ nav {
     
 }
 
+.herosection {
+    font-size: 100px;
+    font-weight: 700;
+    
+}
+
 .navbrand {
     font-family: zilla;
     font-weight: 700;
@@ -133,12 +139,21 @@ width: 350px;
 }
 
 
-.footer {
-    background-color: #7565A8;
-}
+
 
 .inputfield {
     background-color: #FFA510;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 350px;
+    color: white;
+    padding-left: 12px;
+    height: 36px;
+
+}
+
+.inputfield-purple {
+    background-color: #7565A8;
     border: 1px solid white;
     border-radius: 20px;
     width: 350px;
@@ -215,11 +230,19 @@ input::file-selector-button {
   }
 
   .margintop {
-    margin-top: 160px;
+    margin-top: 170px;
   }
 
   .marginbottom {
     margin-bottom: 150px;
+  }
+
+  .marginright {
+    margin-right: 50px;
+  }
+
+  .marginleft {
+    margin-left: 20px;
   }
 
   .blacktext {
@@ -280,3 +303,58 @@ border-radius: 20px;
     transition: 300ms;
     padding-top: 30px;
 }
+
+.footer {
+    background-color: #7565A8;
+    height: 420px;
+    padding: 50px;
+}
+
+.icon {
+    color: white;
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+    background-color: white;
+}
+
+.rainbowbox {
+    padding: 24px;
+}
+
+.rainbowgrid {
+    display: grid;
+    grid-template: "a b c";
+}
+
+.item1 {
+    grid-area: a;
+    width: auto;
+    background-color: #7565A8;
+}
+
+.item2 {
+    grid-area: b; 
+    width: auto;
+    background-color: white;
+}
+
+.item3 {
+    grid-area: c;
+    width: auto;
+    background-color: #7565A8;
+}
+
+.rainbowitem {
+    width: 360px;
+}
+
+.imageicon {
+    height: 80px;
+    margin-right: 16px;
+}
+
+#purple {
+    color: #7565A8;
+}
+
