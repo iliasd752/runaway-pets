@@ -23,6 +23,8 @@ class User(db.Model):
         return {
             "id": self.id,
             "email": self.email,
+            "phone": self.phone,
+            "name": self.name,
             # do not serialize the password, its a security breach
         }
     def __init__(self, name, last_name, email, password, phone):
@@ -37,8 +39,8 @@ class Finder(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
     phone = db.Column(db.Integer, unique=True, nullable=False)
-    location = db.Column(db.String(120), unique=False, nullable=False)
-
+    lat = db.Column(db.Float, unique=False, nullable=True)
+    lng = db.Column(db.Float, unique=False, nullable=True)
 
     def __repr__(self):
         return f'<Finder {self.name}>'
@@ -47,21 +49,25 @@ class Finder(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "phone": self.phone,
+            "lat": self.lat,
+            "lng": self.lng
             # do not serialize the password, its a security breach
         }
-    def __init__(self, name, phone, location):
+    def __init__(self, name, phone, lat, lng):
         self.name = name
         self.phone = phone
-        self.location = location
+        self.lat = lat
+        self.lng = lng
 
 class Pet(db.Model):
     __tablename__ = 'pet'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(120), unique=False, nullable=False)
     species = db.Column(db.String(120), unique=False, nullable=False)
-    important = db.Column(db.String(120), unique=False, nullable=False)
+    important = db.Column(db.String(120), unique=False, nullable=True)
     qr_code = db.Column(db.String(80), unique=False, nullable=False)
-    image = db.Column(db.Boolean(), unique=False, nullable=False)
+    image = db.Column(db.Text, unique=False, nullable=True)
     user_id = db.Column(db.Integer, ForeignKey('user.id'))
     finder_id = db.Column(db.Integer, ForeignKey('finder.id'))
 
@@ -72,5 +78,18 @@ class Pet(db.Model):
         return {
             "id": self.id,
             "name": self.name,
+            "finder_id": self.finder_id,
+            "qr_code": self.qr_code,
+            "important": self.important,
+            "image": self.image,
+            "species": self.species,
+            "user_id": self.user_id
             # do not serialize the password, its a security breach
         }
+    def __init__(self, name, species, important, image, user_id, qr_code):
+        self.name = name
+        self.species = species
+        self.important = important
+        self.image = image
+        self.user_id = user_id
+        self.qr_code = qr_code

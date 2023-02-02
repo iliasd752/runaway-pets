@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: 26943061b5d6
+Revision ID: 8cfe5b5fb044
 Revises: 
-Create Date: 2022-12-12 18:19:30.463500
+Create Date: 2023-01-20 19:58:51.854454
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '26943061b5d6'
+revision = '8cfe5b5fb044'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,7 +22,8 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=120), nullable=False),
     sa.Column('phone', sa.Integer(), nullable=False),
-    sa.Column('location', sa.Boolean(), nullable=False),
+    sa.Column('lat', sa.Float(), nullable=True),
+    sa.Column('lng', sa.Float(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('phone')
     )
@@ -41,9 +42,9 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=120), nullable=False),
     sa.Column('species', sa.String(length=120), nullable=False),
-    sa.Column('important', sa.String(length=120), nullable=False),
+    sa.Column('important', sa.String(length=120), nullable=True),
     sa.Column('qr_code', sa.String(length=80), nullable=False),
-    sa.Column('image', sa.Boolean(), nullable=False),
+    sa.Column('image', sa.Text(), nullable=True),
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('finder_id', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['finder_id'], ['finder.id'], ),
