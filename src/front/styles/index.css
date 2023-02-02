@@ -6,6 +6,7 @@
 body {
     background-color: #FFA510;
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
 hr {
@@ -245,6 +246,10 @@ input::file-selector-button {
     margin-left: 20px;
   }
 
+  .marginleftbig {
+    margin-left: 125px;
+  }
+
   .blacktext {
     color: black;
     font-size: 18px;
@@ -320,11 +325,14 @@ border-radius: 20px;
 
 .rainbowbox {
     padding: 24px;
+    border-radius: 14px;
+   
 }
 
 .rainbowgrid {
     display: grid;
     grid-template: "a b c";
+    
 }
 
 .item1 {

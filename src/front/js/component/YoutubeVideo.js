@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const YoutubeEmbed = ({ embedId }) => (
     <div className="container d-flex flex-column justify-content-center align-items-center mb-5 mt-5">
-         <h1>See Runaway Pets in action</h1>
+         <h1>See how it works</h1>
   <div className="video-responsive">
     <iframe
       width="853"

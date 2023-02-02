@@ -35,7 +35,7 @@ export const Home = () => {
     <div className=" margintop">
       <div className="mt-5 container d-flex">
         <div className="col col-6">
-          <img className="homelogo mb-5" src={homelogo}></img>
+          <img className="homelogo marginleftbig mb-5" src={homelogo}></img>
         </div>
         <div className="col col-6 d-flex flex-column align-items-start justify-content-center">
           <h1 className="herosection">A scan away from home</h1>
