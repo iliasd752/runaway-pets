@@ -70,7 +70,7 @@ h3 {
 
 }
 .petpiccard {
-    width: 220px;   
+    width: 220px; 
     margin-top: 24px;
     margin-bottom: 12px;
     box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.344);
@@ -395,3 +395,14 @@ border-radius: 20px;
     margin-top: 45px;
 }
 
+.inputcheck {
+    display: inline;
+}
+
+
+.socialicons {
+   margin: 10px;
+   margin-bottom: 28px;
+    font-size: 28px;
+    color: white;
+}

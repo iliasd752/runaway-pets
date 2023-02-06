@@ -19,6 +19,7 @@ import { Error404 } from "./pages/Error404";
 import { Error400 } from "./pages/Error400";
 import { FoundPet } from "./pages/FoundPet";
 import { Notification } from "./pages/Notification";
+import { AboutUs } from "./pages/AboutUs";
 
 import GMaps from "./component/Location";
 
@@ -95,6 +96,10 @@ const Layout = () => {
     {
       path: "gmaps",
       element: <GMaps />,
+    },
+    {
+      path: "about-us",
+      element: <AboutUs />,
     }
   ]);
 

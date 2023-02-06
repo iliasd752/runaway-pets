@@ -76,7 +76,7 @@ export const Home = () => {
         <div className="container d-flex">
           <div className="col col-6">
           <h2>Runaway Pets</h2>
-          <h6>Link</h6>
+          <h6>About us</h6>
           <h6>Link</h6>
           <h6>Link</h6>
           <h6>Link</h6>
@@ -125,7 +125,7 @@ export const Home = () => {
                   Login
                 </a>
                 <a
-                  className="marginleft mt-1 mb-5 w-30 text-center signup"
+                  className="marginleft mt-1 mb-5 w-50 text-center signup"
                   href="register-user"
                 >
                   Sign up

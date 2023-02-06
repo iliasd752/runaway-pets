@@ -6,7 +6,7 @@ const GMaps = ({ placeName, lat, lng }) => {
   const googleMapRef = useRef();
   let googleMap
   const showPosition = (position) => {
-    alert(`${position.coords.latitude} - ${position.coords.longitude}`);
+   // alert(`${position.coords.latitude} - ${position.coords.longitude}`);
     const googleMapScript = document.createElement("script");
     googleMapScript.src = `https://maps.googleapis.com/maps/api/js?key=${MAP_KEY}`;
     googleMapScript.async = true;
@@ -68,7 +68,10 @@ const GMaps = ({ placeName, lat, lng }) => {
     <div
       id="google-map"
       ref={googleMapRef}
-      style={{ width: "800px", height: "600px" }}
+      style={{ width: "600px", height: "300px" , borderRadius: "10px" , border: "2px solid white" , margin: "auto", marginTop: "20px" , boxShadow: "10px 10px 10px rgba(0, 0, 0, 0.154)"}}
+
+      
+     
     />
   );
 };

@@ -60,14 +60,14 @@ export const FoundPet = () => {
         {!call && <h3>{store.findPet.species}</h3>}
 
         {!call && (
-          <h3>
+          <h3 className="mt-4">
             {" "}
             <strong>{store.findPet.name}</strong> is so glad you found them!
           </h3>
         )}
         {!call && (
           <h3>
-            Their owner {store.findUser.name} misses them and will appreciate your
+            Their owner <strong> {store.findUser.name} </strong> misses them and will appreciate your
             help.
           </h3>
         )}
@@ -75,7 +75,7 @@ export const FoundPet = () => {
           {/* NAME FIELD */}
           {call && <h3>Thank you so much</h3>}
           {!call && (
-            <div className="petinfo d-flex flex-column mb-4 justify-content-center">
+            <div className="petinfo d-flex flex-column mb-5 mt-4 justify-content-center">
               <label for="petinfo" className="justify-content-center">
                 What is your name?
               </label>
@@ -111,26 +111,30 @@ export const FoundPet = () => {
 
           {/* INPUT */}
           {!call && (
-            <div className="petinfo d-flex flex-column mb-4">
-              <label for="petinfo" className="">
+            <div className="petinfo d-flex flex-row mb-4 justify-content-center">
+             
+              <label for="petinfo" className="mr-5">
                 Share your location with {store.findUser.name}?
               </label>
+              <p></p>
+           
               <input
                 onChange={(e) => {
                   handleLocation(e.target.value);
                 }}
                 type="checkbox"
                 name="petinfo"
-                placeholder="Type your phone number here"
-                className="align-self-center"
+                // className="align-self-center"
+                className="marginleft"
               ></input>
+              
             </div>
           )}
         </div>
         {!call && (
           <button
             disabled={!location.lat && !location.lng}
-            className="purplebutton w-25 text-center mt-5 align-self-center"
+            className="purplebutton w-25 text-center mb-5 mt-5 align-self-center"
             onClick={finderSubmit}
           >
             Submit{" "}

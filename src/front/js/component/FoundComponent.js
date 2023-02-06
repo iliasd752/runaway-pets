@@ -23,18 +23,13 @@ export const FoundComponent = (props) => {
 
   return (
     <div className="mt-5 container d-flex flex-column foundpetcard">
-      <img className="registerbadge mb-5" src={props.image}></img>
+      <img className="petpiccard registerbadge mb-5" src={props.image}></img>
       <div className="form ml-5 d-flex flex-column align-self-center text-center">
         <h3>
           Call <strong>{props.name}</strong> at <strong>{props.phone}</strong>{" "}
           to set up a meeting.
         </h3>
         <h3 className="mt-4">{props.petName}</h3>
-        <div className="mapelement container">
-        {!isLoaded ? <div>Loading..</div> : <div>Map not showing</div>}
-
-   
-        </div>
         <div>
           <GMaps lat={props.lat} lng={props.lng} />
         </div>
