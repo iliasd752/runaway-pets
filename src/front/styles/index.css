@@ -406,3 +406,8 @@ border-radius: 20px;
     font-size: 28px;
     color: white;
 }
+
+.link {
+    color: white;
+    text-decoration: none;
+}

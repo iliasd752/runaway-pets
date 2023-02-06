@@ -12,9 +12,17 @@ export const AboutUs = () => {
   return (
     <div className="container d-flex flex-column align-items-center">
 
+
+    <h2 className="mt-5">Our Mission</h2>
+    <p className="mt-3 mb-5 align-self-center text-center">Our mission is to give pets and owners a way to reunite in case of separation ! <br></br>
+Thanks to a unique QRcode attached to your pet, anyone can scan it and help you find your pet. <br></br>
+Finders are able to share their contact information with pet owners and even the exact location with the help of google maps API.
+</p>
+
     <h1 className="mt-5">Meet Runaway Pets team</h1>
 
-    <div className="mt-5 container d-flex justify-content-around flex-row align-items-betweenr">
+    <div className="mt-5 mb-5 container d-flex justify-content-around flex-row align-items-betweenr">
+        
 
        
         {/* JOSÉ */}
@@ -74,11 +82,6 @@ export const AboutUs = () => {
 
     {/* MISSION */}
 
-    <h2 className="mt-5">Our Mission</h2>
-    <p className="mt-3 mb-5 align-self-center text-center">Our mission is to give pets and owners a way to reunite in case of separation ! <br></br>
-Thanks to a unique QRcode attached to your pet, anyone can scan it and help you find your pet. <br></br>
-Finders are able to share their contact information with pet owners and even the exact location with the help of google maps API.
-</p>
 
     </div>
 

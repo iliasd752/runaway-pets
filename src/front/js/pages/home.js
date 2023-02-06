@@ -76,11 +76,8 @@ export const Home = () => {
         <div className="container d-flex">
           <div className="col col-6">
           <h2>Runaway Pets</h2>
-          <h6>About us</h6>
-          <h6>Link</h6>
-          <h6>Link</h6>
-          <h6>Link</h6>
-          <h6>Link</h6>
+         <a className="link" href="about-us">About us</a>
+         
           </div>
           
           
@@ -88,7 +85,7 @@ export const Home = () => {
           <div className="container col col-6">
             <div className="form ml-5 d-flex flex-column col col-6">
               <h3 className="mb-5">Login to your account</h3>
-              <label for="email">E-mail</label>
+              <label htmlFor="email">E-mail</label>
 
               <input
                 type="email"
