@@ -135,6 +135,7 @@ width: 350px;
 
 .boldlink {
     font-weight: 500;
+    width: 150px;
     text-decoration: none;
     color: white;
 }
@@ -194,6 +195,26 @@ input::file-selector-button {
 }
 
 .purplebutton:hover {
+    transform: scale(103%);
+    color: #7565A8;
+    background-color: white;
+}
+
+.purplebutton1 {
+    text-decoration: none;
+    color: white;
+    background-color: #7565A8;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 40px;
+    border: 1px solid white;
+    transition-duration: 200ms;
+
+}
+
+.purplebutton1:hover {
     transform: scale(103%);
     color: #7565A8;
     background-color: white;
@@ -364,5 +385,13 @@ border-radius: 20px;
 
 #purple {
     color: #7565A8;
+}
+
+.videowindow {
+    border: 10px solid white;
+    border-radius: 10px;
+    transform: rotate(-2deg);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.154);
+    margin-top: 45px;
 }
 

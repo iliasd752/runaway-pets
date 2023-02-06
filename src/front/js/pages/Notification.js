@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import GMaps from "../component/Location";
 import { Context } from "../store/appContext";
 import { PetComponent } from "../component/PetComponent";
+import { FoundComponent } from "../component/FoundComponent";
 
 
 
@@ -36,7 +37,14 @@ export const Notification = () => {
       {petFounds.map((x) => {
         const finder = store.findFinder.find((f) => f.id == x.finder_id);
         // // console.log("Finder", store)
-        return <GMaps lat={finder?.lat} lng={finder?.lng} />
+        return <FoundComponent
+            name={finder?.name}
+            image={x?.image}
+            petName={x?.name}
+            phone={finder?.phone}
+            lat={finder?.lat}
+            lng={finder?.lng}
+          />
         
       })}
     </div>

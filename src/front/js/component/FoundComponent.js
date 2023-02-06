@@ -32,8 +32,11 @@ export const FoundComponent = (props) => {
         <h3 className="mt-4">{props.petName}</h3>
         <div className="mapelement container">
         {!isLoaded ? <div>Loading..</div> : <div>Map not showing</div>}
-       
+
    
+        </div>
+        <div>
+          <GMaps lat={props.lat} lng={props.lng} />
         </div>
         <a className="purplebutton ml-auto mt-5 mb-5 w-50 text-center align-self-center">
           I have my pet back!

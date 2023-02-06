@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 import { Rainbow } from "../component/Rainbow";
 import YoutubeEmbed from "../component/YoutubeVideo";
+import { useRef } from "react";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -17,6 +18,11 @@ export const Home = () => {
   const navigate = useNavigate();
   const [activate, setActivate] = useState(false);
   const [failure, setFailure] = useState("");
+  const ref = useRef(null);
+
+  const handleScroll = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  }
 
   const handleClick = () => {
     actions.logIn(email, password, {
@@ -44,7 +50,7 @@ export const Home = () => {
           <div className="d-flex align-items-center justify-content-between">
             <a
               className="purplebutton mt-1 mb-5  w-50 text-center mr-5"
-              onClick={handleClick}
+              onClick={handleScroll}
             >
               Login
             </a>
@@ -66,7 +72,7 @@ export const Home = () => {
 
       {/* FOOTER */}
 
-      <div className="footer">
+      <div className="footer" ref={ref}>
         <div className="container d-flex">
           <div className="col col-6">
           <h2>Runaway Pets</h2>
@@ -106,20 +112,20 @@ export const Home = () => {
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
               <p>
-                <a className="boldlink" href="register-user">
-                  Sign up
+                <a className="boldlink  mb-5 marginleft w-75 text-center" href="register-user">
+                  Sign up 
                 </a>{" "}
                 if you don't have an account
               </p>
               <div className="d-flex align-items-center justify-content-start">
                 <a
-                  className="purplebutton mt-1 mb-5 w-25 text-center"
+                  className="purplebutton1 mt-1 mb-5 w-50 text-center"
                   onClick={handleClick}
                 >
                   Login
                 </a>
                 <a
-                  className="marginleft mt-1 mb-5 w-25 text-center signup"
+                  className="marginleft mt-1 mb-5 w-30 text-center signup"
                   href="register-user"
                 >
                   Sign up
