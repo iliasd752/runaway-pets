@@ -23,24 +23,24 @@ const handleClicklogout = () => {
 
 
 useEffect(() => {
-  const fetch = setInterval(() => {
-  actions.petList(token, user);
-}, 5000);
-return ()=>{
-  clearInterval(fetch);
+  const fetch = setTimeout(() => {
+   actions.petList(token, user);
+ }, 5000);
+ return ()=>{
+  clearTimeout(fetch);
 }
  
-},[]);
+ },[]);
 
-useEffect(() => {
-  const timeout = setInterval(() => {
-    checkFinder();
+ useEffect(() => {
+   const timeout = setTimeout(() => {
+     checkFinder();
 
-  }, 3000);
-  return ()=>{
-    clearInterval(timeout);
-  }
-},[]);
+   }, 3000);
+   return ()=>{
+    clearTimeout(timeout);
+   }
+ },[]);
 
 
 const checkFinder= ()=>{
