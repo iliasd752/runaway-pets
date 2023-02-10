@@ -56,6 +56,15 @@ h3 {
     transition: 300ms;
 }
 
+.petcard1 {
+    width: 600px;
+    background-color: #FFA510;
+    border-radius: 10px;
+    box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.344);
+    border: 4px solid white;
+    transition: 300ms;
+}
+
 .petcard:hover {
     transform: scale(102%);
     box-shadow: 7px 7px 12px rgba(0, 0, 0, 0.154);;

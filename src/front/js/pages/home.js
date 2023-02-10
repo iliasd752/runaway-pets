@@ -22,8 +22,8 @@ export const Home = () => {
   const ref = useRef(null);
 
   const handleScroll = () => {
-    ref.current?.scrollIntoView({behavior: 'smooth'});
-  }
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleClick = () => {
     actions.logIn(email, password, {
@@ -45,7 +45,6 @@ export const Home = () => {
           <img className="homelogo marginleftbig mb-5" src={homelogo2}></img>
         </div>
         <div className="col col-8 d-flex flex-column align-items-start justify-content-center">
-          
           <h1 className="herosection">Runaway Pets</h1>
           <h2 className="mb-3">A scan away from home</h2>
 
@@ -69,77 +68,72 @@ export const Home = () => {
       <Rainbow />
 
       <div className="video align-self-center justify-self-center">
-      <YoutubeEmbed embedId="JgxyNIkZmLY" />
-    </div>
-
+        <YoutubeEmbed embedId="JgxyNIkZmLY" />
+      </div>
 
       {/* FOOTER */}
 
-      <div className="footer" ref={ref}>
-        <div className="container d-flex">
-          <div className="col col-6">
-          <h2>Runaway Pets</h2>
-         <a className="link" href="about-us">About us</a>
-         
-          </div>
-          
-          
-          {/* LOGIN */}
-          <div className="container col col-6">
-            <div className="form ml-5 d-flex flex-column col col-6">
-              <h3 className="mb-5">Login to your account</h3>
-              <label htmlFor="email">E-mail</label>
+      <div className="footer d-flex justify-content-center" ref={ref}>
+        {/* LOGIN */}
+        <div className="container petcard1 d-flex justify-content-center">
+          <div className="form ml-5 d-flex flex-column">
+            <h2 className="mb-4 mt-5 text-center">Login to your account</h2>
+            {/* <label htmlFor="email">E-mail</label> */}
 
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your registered e-mail"
-                className="inputfield-purple"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
-
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your registered e-mail"
+              className="inputfield"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            ></input>
+            {/* 
               <label type="password" className="password">
                 Password
-              </label>
+              </label> */}
 
-              <input
-                type="password"
-                name="password"
-                placeholder="Enter your password"
-                className="inputfield-purple"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              ></input>
-              <p>
-                <a className="boldlink  mb-5 marginleft w-75 text-center" href="register-user">
-                  Sign up 
-                </a>{" "}
-                if you don't have an account
-              </p>
-              <div className="d-flex align-items-center justify-content-start">
-                <a
-                  className="purplebutton1 mt-1 mb-5 w-50 text-center"
-                  onClick={handleClick}
-                >
-                  Login
-                </a>
-                <a
-                  className="marginleft mt-1 mb-5 w-50 text-center signup"
-                  href="register-user"
-                >
-                  Sign up
-                </a>
-              </div>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter your password"
+              className="inputfield mt-3"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            ></input>
+            <p>
+              <a
+                className="boldlink  mb-5 marginleft w-50 text-center"
+                href="register-user"
+              >
+                Sign up
+              </a>{" "}
+              if you don't have an account
+            </p>
+            <div className="d-flex align-items-center justify-content-start">
+              <a
+                className="purplebutton mt-1 mb-5 w-50 text-center"
+                onClick={handleClick}
+              >
+                Login
+              </a>
+              <a
+                className="marginleft mt-1 mb-5 w-50 text-center signup"
+                href="register-user"
+              >
+                Sign up
+              </a>
+            </div>
 
-              <div>
-                {activate ? (
-                  <p className="error">Error, please try again</p>
-                ) : null}
-              </div>
+            <div>
+              {activate ? (
+                <p className="error">Error, please try again</p>
+              ) : null}
             </div>
           </div>
-          <FontAwesomeIcon className="icon" icon="fa-brands fa-instagram" />
+        </div>
+        <div>
+        <a className="link" href="about-us">About us</a>
         </div>
       </div>
     </div>
