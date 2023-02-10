@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useRef } from "react";
 import registerbadge from "../../img/register-pet-badge.png";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
@@ -17,6 +17,8 @@ export const RegisterPet = () => {
   const [input, setInput] = useState("");
   const [imageData, setimageData] = useState("");
   const navigate = useNavigate();
+
+
 
   const handleCLick = (e) => {
     e.preventDefault();
@@ -136,8 +138,13 @@ export const RegisterPet = () => {
             setInput(e.target.files[0]);
           }}
           type="file"
+          id="uploadImage"
           name="petpicture"
+          
+         
         ></input>
+     
+        
       </div>
 
       <button

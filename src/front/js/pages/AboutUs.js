@@ -7,7 +7,9 @@ import { FontAwesomeIconProps } from "@fortawesome/react-fontawesome";
 
 export const AboutUs = () => {
 
- 
+  const navigateHome = () => {
+    navigate('/');
+  }; 
 
   return (
     <div className="container d-flex flex-column align-items-center">
@@ -30,7 +32,7 @@ Finders are able to share their contact information with pet owners and even the
         <div className="col d-flex flex-column align-items-center ml-5">
           <img src={jose} className="petpiccard"></img>
           <h2 className="mt-5">José Câmara</h2>
-          <h3 className="card_species">Check my work</h3>
+          <h3 className="card_species">Junior Full Stack Developper</h3>
           <div className="d-flex">
             <a href="https://www.linkedin.com/in/jhcamara/" target="_blank">
           <i className="fa-brands fa-linkedin socialicons"></i>
@@ -48,7 +50,7 @@ Finders are able to share their contact information with pet owners and even the
         <div className="col d-flex flex-column align-items-center ml-5">
           <img src={ilias} className="petpiccard"></img>
           <h2 className="mt-5">Ilias Dinia</h2>
-          <h3 className="card_species">Check my work</h3>
+          <h3 className="card_species">Junior Full Stack Developper</h3>
           <div className="d-flex">
             <a href="https://www.linkedin.com/in/ilias-dinia-113584144" target="_blank">
           <i className="fa-brands fa-linkedin socialicons"></i>
@@ -65,7 +67,7 @@ Finders are able to share their contact information with pet owners and even the
         <div className="col d-flex flex-column align-items-center ml-5">
           <img src={ian} className="petpiccard"></img>
           <h2 className="mt-5">Ian Effraimidis</h2>
-          <h3 className="card_species">Check my work</h3>
+          <h3 className="card_species">Junior Full Stack Developper</h3>
 
           <div className="d-flex">
             <a href="https://linkedin.com/in/ian-gabriel-effraimidis-22662158" target="_blank">
@@ -82,9 +84,9 @@ Finders are able to share their contact information with pet owners and even the
 
     {/* MISSION */}
 
-
+    <a className="purplebutton1" href="/">Home</a>
     </div>
-
+    
 
   );
 };

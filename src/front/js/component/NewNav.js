@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Context } from "../store/appContext";
 import { Navigate, useNavigate, redirect } from "react-router-dom";
+import icon from "../../img/favicon3.png";
 
 
 export const NewNav = () => {
@@ -56,6 +57,7 @@ const checkFinder= ()=>{
   return (
     <Navbar variant="dark" expand="lg">
       <Container>
+        <img className="navicon" src={icon}></img>
         <Navbar.Brand className='navbrand' href="/">Runaway Pets</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

@@ -37,7 +37,7 @@ nav {
 }
 
 .navbrand {
-    font-family: zilla;
+  
     font-weight: 700;
     color: white;
 }
@@ -95,7 +95,7 @@ h3 {
 }
 
 .homelogo {
-    width: 300px;
+    width: 240px;
     align-self: center;
 }
 
@@ -187,10 +187,12 @@ input::file-selector-button {
     background-color: #7565A8;
     padding-top: 8px;
     padding-bottom: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     border-radius: 40px;
     transition-duration: 200ms;
+    font-weight: 700;
+    font-size: 20px;
 
 }
 
@@ -211,6 +213,8 @@ input::file-selector-button {
     border-radius: 40px;
     border: 1px solid white;
     transition-duration: 200ms;
+    font-weight: 700;
+    font-size: 18px;
 
 }
 
@@ -227,10 +231,12 @@ input::file-selector-button {
     color: white;
     padding-top: 8px;
     padding-bottom: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     border-radius: 40px;
     transition-duration: 200ms;
+    font-size: 20px;
+    font-weight: 700;
 }
 
 
@@ -268,7 +274,7 @@ input::file-selector-button {
   }
 
   .marginleftbig {
-    margin-left: 125px;
+    margin-left: 60px;
   }
 
   .blacktext {
@@ -410,4 +416,34 @@ border-radius: 20px;
 .link {
     color: white;
     text-decoration: none;
+}
+
+
+.qrcode {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+    background-color: #FFA510;
+    color: white;
+    padding: 26px;
+}
+
+.qrcode1 {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+    background-color: #7565A8;
+    color: white;
+}
+
+.modaltitle {
+    font-size: 22px;
+}
+
+.navicon {
+    margin-right: 16px;
+    width: 24px;
+   
 }

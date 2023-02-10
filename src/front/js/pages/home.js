@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import homelogo from "../../img/homelogo.png";
+import homelogo2 from "../../img/logo11.png";
 import "../../styles/home.css";
 import { Navigate, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,16 +41,18 @@ export const Home = () => {
   return (
     <div className=" margintop">
       <div className="mt-5 container d-flex">
-        <div className="col col-6">
-          <img className="homelogo marginleftbig mb-5" src={homelogo}></img>
+        <div className="col col-4">
+          <img className="homelogo marginleftbig mb-5" src={homelogo2}></img>
         </div>
-        <div className="col col-6 d-flex flex-column align-items-start justify-content-center">
-          <h1 className="herosection">A scan away from home</h1>
+        <div className="col col-8 d-flex flex-column align-items-start justify-content-center">
+          
+          <h1 className="herosection">Runaway Pets</h1>
+          <h2 className="mb-3">A scan away from home</h2>
 
           {/* BUTTONS */}
           <div className="d-flex align-items-center justify-content-between">
             <a
-              className="purplebutton mt-1 mb-5  w-50 text-center mr-5"
+              className="purplebutton mt-1 mb-5  w-50  text-center "
               onClick={handleScroll}
             >
               Login

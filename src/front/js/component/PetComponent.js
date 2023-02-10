@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import { saveAs } from "file-saver";
 
 
 export const PetComponent = (props) => {
@@ -15,6 +15,9 @@ export const PetComponent = (props) => {
 
   const navigate = useNavigate();
 
+  const downloadImg = () => {
+    saveAs(`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${process.env.FRONTEND_URL}/found-pet/${props.qrcode}`)
+  }
 
   const deletePet = () => {
     const opts = {
@@ -65,17 +68,21 @@ export const PetComponent = (props) => {
 
       {/* MODAL */}
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title className="blacktext">Print this tag and attach it to your pet's collar</Modal.Title>
+      <Modal className="modalborders" show={show} onHide={handleClose}>
+        <Modal.Header className="qrcode1">
+          <Modal.Title className="modaltitle">Print this tag and attach it to {props.name}'s collar</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-         <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${process.env.FRONTEND_URL}/found-pet/${props.qrcode}`}></img>
+        <Modal.Body className="qrcode">
+         <img className="qrcode" src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${process.env.FRONTEND_URL}/found-pet/${props.qrcode}`}></img>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Footer className="qrcode">
+        <Button className="purplebutton" variant="secondary" onClick={downloadImg}>
+            Download
+          </Button>
+          <Button className="purplebutton" variant="secondary" onClick={handleClose}>
             Close
           </Button>
+       
         </Modal.Footer>
       </Modal>
     </div>

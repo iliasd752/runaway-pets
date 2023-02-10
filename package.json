@@ -82,11 +82,13 @@
 		"axios": "^1.2.1",
 		"bootstrap": "^5.2.3",
 		"cloudinary-react": "^1.8.1",
+		"file-saver": "^2.0.5",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-bootstrap": "^2.7.0",
 		"react-dom": "^16.8.4",
 		"react-polyfills": "0.0.1",
-		"react-router-dom": "^6.6.1"
+		"react-router-dom": "^6.6.1",
+		"react-to-print": "^2.14.11"
 	}
 }
