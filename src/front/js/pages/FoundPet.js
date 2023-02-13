@@ -67,8 +67,8 @@ export const FoundPet = () => {
         )}
         {!call && (
           <h3>
-            Their owner <strong> {store.findUser.name} </strong> misses them and will appreciate your
-            help.
+            Their owner <strong> {store.findUser.name} </strong> misses them and
+            will appreciate your help.
           </h3>
         )}
         <div className="d-flex flex-column justify-content-center">
@@ -112,12 +112,11 @@ export const FoundPet = () => {
           {/* INPUT */}
           {!call && (
             <div className="petinfo d-flex flex-row mb-4 justify-content-center">
-             
               <label for="petinfo" className="mr-5">
                 Share your location with {store.findUser.name}?
               </label>
               <p></p>
-           
+
               <input
                 onChange={(e) => {
                   handleLocation(e.target.value);
@@ -127,7 +126,6 @@ export const FoundPet = () => {
                 // className="align-self-center"
                 className="marginleft"
               ></input>
-              
             </div>
           )}
         </div>
@@ -145,7 +143,7 @@ export const FoundPet = () => {
         </a> */}
         {call && (
           <a
-            href={store.findUser.phone}
+            href={"tel:" + store.findUser.phone}
             className="purplebutton ml-auto mt-3 mb-5 w-50 text-center align-self-center"
           >
             Call {store.findUser.name}

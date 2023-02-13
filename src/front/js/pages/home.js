@@ -73,7 +73,7 @@ export const Home = () => {
 
       {/* FOOTER */}
 
-      <div className="footer d-flex justify-content-center" ref={ref}>
+      <div className="footer d-flex flex-column align-items-center" ref={ref}>
         {/* LOGIN */}
         <div className="container petcard1 d-flex justify-content-center">
           <div className="form ml-5 d-flex flex-column">
@@ -132,8 +132,10 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        <div>
-        <a className="link" href="about-us">About us</a>
+        <div className="mt-5 mb-5 signup">
+          <a className="link" href="about-us">
+            About us
+          </a>
         </div>
       </div>
     </div>
