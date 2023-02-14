@@ -349,6 +349,7 @@ border-radius: 20px;
     background-color: #7565A8;
     height: 620px;
     padding: 50px;
+    border-top: 5px solid white;
 }
 
 .icon {
@@ -405,7 +406,7 @@ border-radius: 20px;
 .videowindow {
     border: 10px solid white;
     border-radius: 10px;
-    transform: rotate(-2deg);
+    /* transform: rotate(-2deg); */
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.154);
     margin-top: 45px;
 }
