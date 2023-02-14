@@ -23,8 +23,8 @@ export const PetCard = () => {
         {store.petList?.map((x)=><PetComponent key={x.qr_code} qrcode={x.qr_code} name={x.name} species={x.species} important={x.important} image={x.image}/>)}    
       </div>
 
-      <div>
-        <a className="purplebutton" href="register-pet">
+      <div className="mt-4 mb-5">
+        <a className="purplebutton mb-5 mt-4" href="register-pet">
           Add a new pet
         </a>
       </div>
