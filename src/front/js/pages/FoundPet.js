@@ -144,7 +144,7 @@ export const FoundPet = () => {
         {call && (
           <a
             href={"tel:" + store.findUser.phone}
-            className="purplebutton ml-auto mt-3 mb-5 w-50 text-center align-self-center"
+            className="purplebutton ml-auto mt-3 mb-5 text-center align-self-center"
           >
             Call {store.findUser.name}
           </a>

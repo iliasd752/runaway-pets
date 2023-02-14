@@ -8,6 +8,10 @@ import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 
 export const FoundComponent = (props) => {
+  const deleteFinder = ()=>{
+    actions.petFinderDelete(props.qr_code);
+    window.location.reload(false);
+  }
   const { store, actions } = useContext(Context);
   const [petFounds, setPetFounds] = useState([]);
   // // console.log("my props", props);
@@ -33,8 +37,8 @@ export const FoundComponent = (props) => {
         <div>
           <GMaps lat={props.lat} lng={props.lng} />
         </div>
-        <a className="purplebutton ml-auto mt-5 mb-5 w-50 text-center align-self-center">
-          I have my pet back!{qr}
+        <a className="purplebutton ml-auto mt-5 mb-5 w-50 text-center align-self-center" onClick={deleteFinder}>
+          I have my pet back!
         </a>
       </div>
     </div>

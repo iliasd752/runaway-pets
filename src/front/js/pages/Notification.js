@@ -30,7 +30,7 @@ export const Notification = () => {
   }, [petFounds]);
 
   if (!petFounds?.length) {
-    return null;
+    return <div>no pets lost</div>;
   }
   return (
     <div className="mt-5 container d-flex flex-column">

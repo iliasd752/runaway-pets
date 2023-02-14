@@ -183,6 +183,31 @@ const getState = ({ getStore, getActions, setStore }) => {
             console.error("There was an error", error);
           });
       },
+      petFinderDelete: (
+        qrcode
+      ) => {
+        const opts = {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            qr_code: qrcode.toString(),
+          }),
+        };
+        fetch(process.env.BACKEND_URL + "/api/delete_finder", opts)
+          .then((resp) => {
+            if (resp.status === 200) return resp.json();
+          })
+          .then((data) => {
+             console.log(data)
+          })
+          .catch((error) => {
+            console.error("There was an error", error);
+          });
+      },
+
+
       findFinder: (finder_id) => {
         const opts = {
           method: "POST",
