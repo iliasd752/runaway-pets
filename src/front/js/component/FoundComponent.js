@@ -34,7 +34,7 @@ export const FoundComponent = (props) => {
           <GMaps lat={props.lat} lng={props.lng} />
         </div>
         <a className="purplebutton ml-auto mt-5 mb-5 w-50 text-center align-self-center">
-          I have my pet back!
+          I have my pet back!{qr}
         </a>
       </div>
     </div>

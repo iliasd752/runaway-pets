@@ -60,6 +60,7 @@ export const PetComponent = (props) => {
         <div className="col  d-flex flex-column align-items-center ml-5">
           <h2>{props.name}</h2>
           <h3 className="card_species">{props.species}</h3>
+          <h5>Important information</h5>
           <p>{props.important}</p>
           <a className="signup mb-4" onClick={handleShow}>See my QR Code</a>
           <a className="signup mb-4" onClick={deletePet}>Delete pet</a>

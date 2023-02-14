@@ -80,6 +80,19 @@ def delete_pet():
     
     return jsonify({"pet": pet.serialize(),"message": "this pet was deleted"}), 200
 
+@api.route('/delete_finder', methods=['DELETE'])
+
+def delete_finder():
+
+    qrcode = request.json.get("qr_code", None)
+    if qrcode == None:
+        return "Can't find qr_code and pet to delete", 404
+    pet= Pet.query.filter_by(qr_code=qrcode).first()
+    pet.finder_id = None
+    db.session.commit()
+    
+    return jsonify({"pet": pet.serialize(),"message": "this pet finder was deleted"}), 200
+
 
 @api.route('/find_pet', methods=['POST'])
 def find_pet():

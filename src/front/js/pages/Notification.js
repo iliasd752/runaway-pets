@@ -44,6 +44,7 @@ export const Notification = () => {
             phone={finder?.phone}
             lat={finder?.lat}
             lng={finder?.lng}
+            qr_code={x?.qr_code}
           />
         
       })}
