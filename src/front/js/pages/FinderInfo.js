@@ -25,7 +25,7 @@ export const FinderInfo = () => {
 					<input type="text" name="phone" placeholder="+1 555 5555" className="inputfield"></input>
 					<p className="d-inline">Can we share your location with Bruno?</p>
 					<input className="form-check-input d-inline" type="checkbox" value="" id="flexCheckIndeterminate"></input>
-					<a className="purplebutton ml-auto mt-1 mb-5 w-25 text-center align-self-center">Submit</a>
+					<a className="purplebutton text-center">Submit</a>
 					<div className="d-flex container  justify-content-around">
 					<a className="purplebutton text-center ">Call owner</a>
 					<a className="purplebutton text-center ">See pet info</a>

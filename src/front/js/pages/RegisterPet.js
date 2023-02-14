@@ -149,7 +149,7 @@ export const RegisterPet = () => {
 
       <button
         onClick={handleCLick}
-        className="purplebutton w-25 text-center mt-5"
+        className="purplebutton w-25 text-center mt-5 mb-5"
       >
         Submit
       </button>

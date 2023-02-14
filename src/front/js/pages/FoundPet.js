@@ -132,7 +132,7 @@ export const FoundPet = () => {
         {!call && (
           <button
             disabled={!location.lat && !location.lng}
-            className="purplebutton w-25 text-center mb-5 mt-5 align-self-center"
+            className="purplebutton w-50 text-center mb-5 mt-5 align-self-center"
             onClick={finderSubmit}
           >
             Submit{" "}
