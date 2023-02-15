@@ -71,7 +71,7 @@ export const RegisterPet = () => {
       <img className="registerbadge mb-5" src={registerbadge}></img>
 
       <div className="petname d-flex flex-column mb-3">
-        <label for="petname">Pet name</label>
+        <label htmlFor="petname">Pet name</label>
         <input
           value={name}
           onChange={(e) => {
@@ -85,7 +85,7 @@ export const RegisterPet = () => {
       </div>
 
       <div className="petinfo d-flex flex-column mb-4">
-        <label for="petinfo" className="">
+        <label htmlFor="petinfo" className="">
           Important information
         </label>
         <input
@@ -103,7 +103,7 @@ export const RegisterPet = () => {
       {/* TEST SPECIES */}
 
       <div className="petinfo d-flex flex-column mb-4">
-        <label for="petselect" className="petlabel">
+        <label htmlFor="petselect" className="petlabel">
           Pet species
         </label>
         <Form.Select
@@ -129,7 +129,7 @@ export const RegisterPet = () => {
       {/* TEST IMAGE UPLOAD */}
 
       <div className="petinfo d-flex flex-column mb-4">
-        <label for="petpicture" className="">
+        <label htmlFor="petpicture" className="">
           PICTURE
         </label>
         <input

@@ -76,7 +76,7 @@ export const FoundPet = () => {
           {call && <h3>Thank you so much</h3>}
           {!call && (
             <div className="petinfo d-flex flex-column mb-5 mt-4 justify-content-center">
-              <label for="petinfo" className="justify-content-center">
+              <label htmlFor="petinfo" className="justify-content-center">
                 What is your name?
               </label>
               <input
@@ -94,7 +94,7 @@ export const FoundPet = () => {
           {/* PHONE NUMBER FIELD */}
           {!call && (
             <div className="petinfo d-flex flex-column mb-4">
-              <label for="petinfo" className="">
+              <label htmlFor="petinfo" className="">
                 What is your phone number?
               </label>
               <input
@@ -112,7 +112,7 @@ export const FoundPet = () => {
           {/* INPUT */}
           {!call && (
             <div className="petinfo d-flex flex-row mb-4 justify-content-center">
-              <label for="petinfo" className="mr-5">
+              <label htmlFor="petinfo" className="mr-5">
                 Share your location with {store.findUser.name}?
               </label>
               <p></p>
