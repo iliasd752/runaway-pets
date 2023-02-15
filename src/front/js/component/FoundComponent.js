@@ -1,14 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
-import petpic from "../../img/dogprofile.png";
+import React, { useContext, useState } from "react";
 import "../../styles/home.css";
 import GMaps from "../component/Location";
 import { Context } from "../store/appContext";
-import { useMemo } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 
 export const FoundComponent = (props) => {
-  const deleteFinder = ()=>{
+  const deleteFinder = () => {
     actions.petFinderDelete(props.qr_code);
     window.location.reload(false);
   }
@@ -16,7 +14,7 @@ export const FoundComponent = (props) => {
   const [petFounds, setPetFounds] = useState([]);
   // // console.log("my props", props);
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyBRvJfMguSSTm7y8FG4oXVYUNPEyFTrolE",
+    googleMapsApiKey: process.env.MAP_KEY,
 });
  function Map() {
   return <GoogleMap zoom={10} center={{lat: 44, lng:-80}}>
