@@ -18,7 +18,7 @@ export const RegisterUser = () => {
       last_name: lastName,
       email: email,
       password: password,
-      phone: phoneNumber,
+      phone: phoneNumber
     };
 
     axios
@@ -39,7 +39,7 @@ export const RegisterUser = () => {
       <h3 className="mb-5">Fill in the form to create your account</h3>
 
       <div className="petname d-flex flex-column mb-3">
-        <label for="username">Name</label>
+        <label htmlFor="username">Name</label>
         <input
           value={name}
           onChange={(e) => {
@@ -53,7 +53,7 @@ export const RegisterUser = () => {
       </div>
 
       <div className="petinfo d-flex flex-column mb-4">
-        <label for="lastname" className="">
+        <label htmlFor="lastname" className="">
           Last Name
         </label>
         <input
@@ -71,7 +71,7 @@ export const RegisterUser = () => {
       {/* TEST IMAGE UPLOAD */}
 
       <div className="petinfo d-flex flex-column mb-4">
-        <label for="petinfo" className="">
+        <label htmlFor="petinfo" className="">
           E-mail
         </label>
         <input
@@ -89,7 +89,7 @@ export const RegisterUser = () => {
       {/* TEST USER ID */}
 
       <div className="petinfo d-flex flex-column mb-4">
-        <label for="petinfo" className="">
+        <label htmlFor="petinfo" className="">
           Password
         </label>
         <input
@@ -107,7 +107,7 @@ export const RegisterUser = () => {
       {/* TEST QR CODE */}
 
       <div className="petinfo d-flex flex-column mb-4">
-        <label for="petinfo" className="">
+        <label htmlFor="petinfo" className="">
           Phone number
         </label>
         <input

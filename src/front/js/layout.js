@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
-  useLocation,
+  useLocation
 } from "react-router-dom";
 
 import { Home } from "./pages/home";
