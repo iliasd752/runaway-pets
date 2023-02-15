@@ -42,6 +42,8 @@ export const PetComponent = (props) => {
         console.error("There was an error", error);
       });
 
+      window.location.reload();
+
   }
 
  

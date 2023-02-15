@@ -17,12 +17,10 @@ export const ThankYou = () => {
         </div>
 
         <div className="col col-12 col-lg-6 d-flex flex-column align-items-lg-start align-items-center justify-content-center ">
-          <h2>Thank you very much! </h2>
-          <h3 className="text-align-center">
-            We really appreciate your help making best friends reunite.
+          <h1>You have no lost pets! </h1>
+          <h3 className="text-align-center thankyou">
+            We hope you never have to go through it,<br></br> but if any of your pets get lost at any time, you'll be notified and they will show up here.
           </h3>
-          <h3>Here is {store.findUser.name}'s phone number:</h3>
-          <h3>{store.findUser.phone}</h3>
         </div>
       </div>
     </div>

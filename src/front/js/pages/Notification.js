@@ -5,6 +5,7 @@ import GMaps from "../component/Location";
 import { Context } from "../store/appContext";
 import { PetComponent } from "../component/PetComponent";
 import { FoundComponent } from "../component/FoundComponent";
+import { ThankYou } from "../pages/ThankYou";
 
 
 
@@ -30,7 +31,9 @@ export const Notification = () => {
   }, [petFounds]);
 
   if (!petFounds?.length) {
-    return <div>no pets lost</div>;
+    return <div className="mt-5">
+      <ThankYou  />
+    </div>;
   }
   return (
     <div className="mt-5 container d-flex flex-column">
